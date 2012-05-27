@@ -72,9 +72,13 @@ const WEATHER_CONV_MPH_IN_MPS = 2.23693629;
 const WEATHER_CONV_KPH_IN_MPS = 3.6;
 const WEATHER_CONV_KNOTS_IN_MPS = 1.94384449;
 
+// Kelvin-Celsius Constant
+const KELVIN = 273;
+
 // Magic strings
 const ELLIPSIS = '...';
 const EN_DASH = '\u2013';
+const EN_SLASH = '\u002F';
 
 // Query
 const QUERY_PARAMS = '?format=json&q=select ';
@@ -108,7 +112,8 @@ const SIGNAL_REPAINT = 'repaint';
 
 const WeatherUnits = {
 	CELSIUS: 0,
-	FAHRENHEIT: 1
+	FAHRENHEIT: 1,
+	KELVIN: 2
 }
 const WeatherWindSpeedUnits = {
 	KPH: 0,
@@ -236,7 +241,7 @@ MyApplet.prototype = {
 			//  initialize settings
 			//----------------------------------
 			this._settings = getSettings(GSETTINGS_SCHEMA);
-			this._units = this._settings.get_enum(WEATHER_TEMPERATURE_UNIT_KEY);
+			this._units = this._settings.get_enum(WEATHER_TEMPERATURE_UNIT_KEY) == 2 ? 1 : this._settings.get_enum(WEATHER_TEMPERATURE_UNIT_KEY);
 			this._wind_speed_units = this._settings.get_enum(WEATHER_WIND_SPEED_UNIT_KEY);
 			this._city  = this._settings.get_string(WEATHER_CITY_KEY);
 			this._woeid = this._settings.get_string(WEATHER_WOEID_KEY);
@@ -413,7 +418,7 @@ MyApplet.prototype = {
 				
 				let sunrise = weather.get_object_member('astronomy').get_string_member('sunrise');
 				let sunset = weather.get_object_member('astronomy').get_string_member('sunset');
-				
+
 				let temperature = weather_c.get_string_member('temp');
 				
 				let wind = weather.get_object_member('wind').get_string_member('speed');
@@ -428,16 +433,28 @@ MyApplet.prototype = {
 
 				if (this._text_in_panel) {
 					if (this._comment_in_panel) {
-						this.set_applet_label(comment + ' ' + temperature + ' ' + this.unit_to_unicode());
+						if (this._settings.get_enum(WEATHER_TEMPERATURE_UNIT_KEY) == 2) {
+							this.set_applet_label(comment + ' ' + (parseFloat(temperature) + KELVIN).toString() + ' K');
+						} else {
+							this.set_applet_label(comment + ' ' + temperature + ' ' + this.unit_to_unicode());
+						}
 					} else {
-						this.set_applet_label(temperature + ' ' + this.unit_to_unicode()); 
+						if (this._settings.get_enum(WEATHER_TEMPERATURE_UNIT_KEY) == 2) {
+							this.set_applet_label((parseFloat(temperature) + KELVIN).toString() + ' K');
+						} else {
+							this.set_applet_label(temperature + ' ' + this.unit_to_unicode());
+						}
 					}
 				} else {
 					this.set_applet_label('');
 				}
 				
 				this._currentWeatherSummary.text = comment;
-				this._currentWeatherTemperature.text = temperature + ' ' + this.unit_to_unicode();
+				if (this._settings.get_enum(WEATHER_TEMPERATURE_UNIT_KEY) == 2) {
+					this._currentWeatherTemperature.text = (parseFloat(temperature) + KELVIN).toString() + ' K';
+				} else {
+					this._currentWeatherTemperature.text = temperature + ' ' + this.unit_to_unicode();
+				}
 				this._currentWeatherHumidity.text = humidity;
 				this._currentWeatherPressure.text = pressure + ' ' + pressure_unit;
 				
@@ -505,7 +522,14 @@ MyApplet.prototype = {
 						comment = this.get_weather_condition(code);
 
 					forecastUi.Day.text = date_string[i] + ' (' + this.get_locale_day(forecastData.get_string_member('day')) + ')';
-					forecastUi.Temperature.text = t_low + ' ' + '\u002F' + ' ' + t_high + ' ' + this.unit_to_unicode();
+					var forecastTemp;
+					if (this._settings.get_enum(WEATHER_TEMPERATURE_UNIT_KEY) == 2) {
+						forecastTemp = (parseFloat(t_low) + KELVIN).toString() + ' ' + EN_SLASH + ' ' + (parseFloat(t_high) + KELVIN).toString() + ' K';
+					} else {
+						forecastTemp = t_low + ' ' + EN_SLASH + ' ' + t_high + ' ' + this.unit_to_unicode();
+					}
+
+					forecastUi.Temperature.text = forecastTemp;
 					forecastUi.Summary.text = comment;
 					forecastUi.Icon.icon_name = this.get_weather_icon_safely(code);
 				}

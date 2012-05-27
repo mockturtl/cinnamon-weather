@@ -3,6 +3,7 @@
   <enum id="weather.temperature-unit">
     <value value="0" nick="celsius"/>
     <value value="1" nick="fahrenheit"/>
+	<value value="2" nick="kelvin"/>
   </enum>
   <enum id="weather.wind-speed-unit">
     <value nick="kph" value="0" />

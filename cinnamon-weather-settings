@@ -119,7 +119,7 @@ class CinnamonWeatherSettings:
                 "<b><a href='http://edg3.co.uk/snippets/weather-location-codes/'>WOEID</a></b>:",
                 "The Where On Earth ID determinees the location/city")
         self.add_radio('temperature-unit', 'Temperature Unit',
-                [(0, 'celsius'), (1, 'fahrenheit')])
+                [(0, 'celsius'), (1, 'fahrenheit'), (2, 'kelvin')])
         self.add_radio('wind-speed-unit', 'Wind Speed Unit',
                 [(0, 'kph'), (1, 'mph'), (2, 'm/s'), (3, 'knots')])
         self.add_text('location-label-override', 'Override Location Label',
