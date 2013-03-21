@@ -19,21 +19,7 @@ compile_schemas() {
 		sudo glib-compile-schemas ${SCHEMA_DIR}
 }
 
-do_install() {
-	cat << EOF
-
-	Installing applet in ${INSTALL_DIR}...
-EOF
-	
-	sudo cp -f ${SCHEMA} ${SCHEMA_DIR} &&
-		compile_schemas
-
-	mkdir -p ${INSTALL_DIR}
-
-	sudo ln -sf ${INSTALL_DIR}/cinnamon-weather-settings /usr/local/bin
-	# strip comment lines
-	cat manifest | sed -r ${COMMENTS}d | sed -r '\ .*('${EXCLUDES}')$ d' | xargs -i cp -f '{}' ${INSTALL_DIR}
-
+compile_locales() {
 	cat << EOF
 	Installing applet locales in ${LOCALE_DIR}...
 EOF
@@ -41,6 +27,29 @@ EOF
 		mkdir -p ${LOCALE_DIR}/${LOCALE}/LC_MESSAGES
 		msgfmt -c po/${LOCALE}.po -o ${LOCALE_DIR}/${LOCALE}/LC_MESSAGES/${UUID}.mo
 	done
+}
+
+copy_files() {
+	cat manifest |\
+		sed -r ${COMMENTS}d |\
+		sed -r '\ .*('${EXCLUDES}')$ d' |\
+		xargs -i cp -f '{}' ${INSTALL_DIR}
+}
+
+do_install() {
+	cat << EOF
+
+	Installing applet in ${INSTALL_DIR}...
+EOF
+
+	sudo cp -f ${SCHEMA} ${SCHEMA_DIR} && compile_schemas
+
+	mkdir -p ${INSTALL_DIR}
+
+	sudo ln -sf ${INSTALL_DIR}/cinnamon-weather-settings /usr/local/bin
+
+	copy_files
+	compile_locales
 
 	chown -R ${USER} ${INSTALL_DIR} ${LOCALE_DIR} 2>/dev/null
 }
@@ -61,18 +70,8 @@ EOF
 
 	install cinnamon-weather-settings ${PREFIX}/bin/
 
-	cat manifest |\
-		sed -r ${COMMENTS}d |\
-		sed -r '\ .*('${EXCLUDES}')$ d' |\
-		xargs -i cp -f '{}' ${INSTALL_DIR}
-
-	cat << EOF
-	Installing applet locales in ${LOCALE_DIR}...
-EOF
-	for LOCALE in ${LOCALES}; do
-		mkdir -p ${LOCALE_DIR}/${LOCALE}/LC_MESSAGES
-		msgfmt -c po/${LOCALE}.po -o ${LOCALE_DIR}/${LOCALE}/LC_MESSAGES/${UUID}.mo
-	done
+	copy_files
+	compile_locales
 }
 
 do_uninstall() {
