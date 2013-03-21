@@ -45,6 +45,36 @@ EOF
 	chown -R ${USER} ${INSTALL_DIR} ${LOCALE_DIR} 2>/dev/null
 }
 
+do_system_install() {
+	cat << EOF
+
+	Installing applet system-wide (${PREFIX})...
+EOF
+	PREFIX=$1
+	INSTALL_DIR="${PREFIX}/share/cinnamon/applets/${UUID}"
+	LOCALE_DIR="${PREFIX}/share/locale"
+	SCHEMA_DIR="${PREFIX}/share/glib-2.0/schemas/"
+
+	mkdir -p ${INSTALL_DIR} ${PREFIX}/bin/ ${SCHEMA_DIR}
+
+	cp -f ${SCHEMA} ${SCHEMA_DIR} && glib-compile-schemas ${SCHEMA_DIR}
+
+	install cinnamon-weather-settings ${PREFIX}/bin/
+
+	cat manifest |\
+		sed -r ${COMMENTS}d |\
+		sed -r '\ .*('${EXCLUDES}')$ d' |\
+		xargs -i cp -f '{}' ${INSTALL_DIR}
+
+	cat << EOF
+	Installing applet locales in ${LOCALE_DIR}...
+EOF
+	for LOCALE in ${LOCALES}; do
+		mkdir -p ${LOCALE_DIR}/${LOCALE}/LC_MESSAGES
+		msgfmt -c po/${LOCALE}.po -o ${LOCALE_DIR}/${LOCALE}/LC_MESSAGES/${UUID}.mo
+	done
+}
+
 do_uninstall() {
 	cat << EOF
 
@@ -94,7 +124,11 @@ EOF
 
 case `basename $0` in
 	"install.sh")
-		do_install
+		if [   -z $1 ]; then
+			do_install;
+		else
+			do_system_install $1;
+		fi
 		;;
 	"uninstall.sh")
 		do_uninstall
