@@ -239,10 +239,10 @@ MyApplet.prototype = {
       }))
  
       // context menu
-      let settingsMenuItem = new Applet.MenuItem(_("Settings"), Gtk.STOCK_EDIT, Lang.bind(this, function() {
-          Util.spawnCommandLine(CMD_SETTINGS)
-      }))
-      this._applet_context_menu.addMenuItem(settingsMenuItem)
+      //let settingsMenuItem = new Applet.MenuItem(_("Settings"), Gtk.STOCK_EDIT, Lang.bind(this, function() {
+      //    Util.spawnCommandLine(CMD_SETTINGS)
+      //}))
+      //this._applet_context_menu.addMenuItem(settingsMenuItem)
 
       //------------------------------
       // render graphics container
