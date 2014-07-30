@@ -382,7 +382,7 @@ msgstr "Razdoblje ažuriranja (minute)"
 
 #. cinnamon-weather->settings-schema.json->useSymbolicIcons->description
 msgid "Symbolic icons"
-msgstr "Simboličke ikone"
+msgstr "Prikaži simboličke ikone"
 
 #. cinnamon-weather->settings-schema.json->showFivedayForecast->description
 msgid "Show 5-day forecast"
