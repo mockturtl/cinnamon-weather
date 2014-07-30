@@ -342,7 +342,7 @@ msgstr "celzijus"
 
 #. cinnamon-weather->settings-schema.json->translateCondition->description
 msgid "Translate condition"
-msgstr "Prevedi stanje"
+msgstr "Prikaži prevedeno trentno stanje vremena"
 
 #. cinnamon-weather->settings-schema.json->locationLabelOverride->description
 msgid "Override location label"
