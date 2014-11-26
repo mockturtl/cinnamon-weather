@@ -73,6 +73,7 @@ const WEATHER_SHOW_FIVEDAY_FORECAST_KEY = 'showFivedayForecast'
 const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'showTextInPanel'
 const WEATHER_TRANSLATE_CONDITION_KEY = 'translateCondition'
 const WEATHER_TEMPERATURE_UNIT_KEY = 'temperatureUnit'
+const WEATHER_PRESSURE_UNIT_KEY = 'pressureUnit'
 const WEATHER_USE_SYMBOLIC_ICONS_KEY = 'useSymbolicIcons'
 const WEATHER_WIND_SPEED_UNIT_KEY = 'windSpeedUnit'
 const WEATHER_WOEID_KEY = 'woeid'
@@ -87,7 +88,8 @@ const KEYS = [
   WEATHER_SHOW_COMMENT_IN_PANEL_KEY,
   WEATHER_SHOW_SUNRISE_KEY,
   WEATHER_SHOW_FIVEDAY_FORECAST_KEY,
-  WEATHER_REFRESH_INTERVAL
+  WEATHER_REFRESH_INTERVAL,
+  WEATHER_PRESSURE_UNIT_KEY
 ]
 
 // Signals
@@ -129,6 +131,37 @@ const WeatherWindSpeedUnits = {
   MPS: 'm/s',
   KNOTS: 'knots'
 }
+
+
+const WeatherPressureResponseUnits = {
+  MBAR: 'mb',
+  PSI: 'in'
+}
+
+const WeatherPressureUnits = {
+  MBAR: 'mbar',
+  MMHG: 'mm Hg',
+  INHG: 'in Hg',
+  PA: 'Pa',
+  PPS: 'psi',
+  ATM: 'atm',
+  AT: 'at'
+}
+
+// Pressure conversion factors
+const WEATHER_CONV_PA_IN_MBAR = 1e+2
+const WEATHER_CONV_MMHG_IN_MBAR = 750.06e-3
+const WEATHER_CONV_INHG_IN_MBAR = 750.06e-1/2539.
+const WEATHER_CONV_AT_IN_MBAR = 1.0197e-3
+const WEATHER_CONV_ATM_IN_MBAR = 0.98692e-3
+const WEATHER_CONV_PSI_IN_MBAR = 14.504e-3
+
+const WEATHER_CONV_MBAR_IN_PSI = 68.948
+const WEATHER_CONV_PA_IN_PSI = 6894.76
+const WEATHER_CONV_MMHG_IN_PSI = 51.715
+const WEATHER_CONV_INHG_IN_PSI = 51.715e+2/2539.
+const WEATHER_CONV_AT_IN_PSI = 70.307e-3
+const WEATHER_CONV_ATM_IN_PSI = 68.046e-3
 
 //----------------------------------------------------------------------
 //
@@ -396,7 +429,6 @@ MyApplet.prototype = {
         this._currentWeatherSummary.text = comment
         this._currentWeatherTemperature.text = temperature + ' ' + this.unitToUnicode()
         this._currentWeatherHumidity.text = humidity
-        this._currentWeatherPressure.text = pressure + ' ' + pressure_unit
 
         // Override wind units with our preference
         // Need to consider what units the Yahoo API has returned it in
@@ -437,6 +469,71 @@ MyApplet.prototype = {
         }
         this._currentWeatherWind.text = (wind_direction ? wind_direction + ' ' : '') + wind + ' ' + wind_unit
         this._currentWeatherWindChill.text = wind_chill + ' ' + this.unitToUnicode()
+
+        // Override pressure units with our preference
+        // Need to consider what units the Yahoo API has returned it in
+        switch (this._pressureUnit) {
+          case WeatherPressureUnits.MBAR:
+            // Round to whole units
+            if (this._temperatureUnit == WeatherUnits.FAHRENHEIT) {
+              pressure = Math.round (pressure * WEATHER_CONV_MBAR_IN_PSI)
+            }
+            pressure_unit = WeatherPressureUnits.MBAR;
+            break;
+          case WeatherPressureUnits.PSI:
+            // Round to whole units
+            if (this._temperatureUnit == WeatherUnits.CELSIUS) {
+              pressure = Math.round (pressure * WEATHER_CONV_PSI_IN_MBAR)
+            }
+            pressure_unit = WeatherPressureUnits.PSI;
+            break;
+          case WeatherPressureUnits.MMHG:
+            // Precision to one decimal place as 1 m/s is quite a large unit
+            if (this._temperatureUnit == WeatherUnits.CELSIUS) {
+              pressure = Math.round (pressure * WEATHER_CONV_MMHG_IN_MBAR) 
+            } else {
+              pressure = Math.round (pressure * WEATHER_CONV_MMHG_IN_PSI)
+            }
+            pressure_unit = WeatherPressureUnits.MMHG;
+            break;
+          case WeatherPressureUnits.INHG:
+            // Precision to one decimal place as 1 m/s is quite a large unit
+            if (this._temperatureUnit == WeatherUnits.CELSIUS) {
+              pressure = Math.round (pressure * WEATHER_CONV_INHG_IN_MBAR) 
+            } else {
+              pressure = Math.round (pressure * WEATHER_CONV_INHG_IN_PSI)
+            }
+            pressure_unit = WeatherPressureUnits.INHG
+            break
+          case WeatherPressureUnits.AT:
+            // Precision to one decimal place as 1 m/s is quite a large unit
+            if (this._temperatureUnit == WeatherUnits.CELSIUS) {
+              pressure = Math.round (pressure * WEATHER_CONV_AT_IN_MBAR) 
+            } else {
+              pressure = Math.round (pressure * WEATHER_CONV_AT_IN_PSI)
+            }
+            pressure_unit = WeatherPressureUnits.AT
+            break
+          case WeatherPressureUnits.ATM:
+            // Precision to one decimal place as 1 m/s is quite a large unit
+            if (this._temperatureUnit == WeatherUnits.CELSIUS) {
+              pressure = Math.round (pressure * WEATHER_CONV_ATM_IN_MBAR) 
+            } else {
+              pressure = Math.round (pressure * WEATHER_CONV_ATM_IN_PSI)
+            }
+            pressure_unit = WeatherPressureUnits.ATM
+            break
+          case WeatherPressureUnits.PA:
+            // Precision to one decimal place as 1 m/s is quite a large unit
+            if (this._temperatureUnit == WeatherUnits.CELSIUS) {
+              pressure = Math.round (pressure * WEATHER_CONV_PA_IN_MBAR) 
+            } else {
+              pressure = Math.round (pressure * WEATHER_CONV_PA_IN_PSI)
+            }
+            pressure_unit = WeatherPressureUnits.PA
+            break
+        }
+        this._currentWeatherPressure.text = pressure + ' ' + pressure_unit
 
         // location is a button
         this._currentWeatherLocation.style_class = STYLE_LOCATION_LINK
