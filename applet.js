@@ -59,7 +59,8 @@ const EN_DASH = '\u2013'
 
 // Query
 const QUERY_PARAMS = '?format=json&q=select '
-const QUERY_TABLE = 'feednormalizer where url="http://xml.weather.yahoo.com/forecastrss/'
+const QUERY_TABLE = 'feednormalizer where url="'
+const QUERY_XURL='http://xml.weather.yahoo.com/forecastrss?'
 const QUERY_VIEW = '*'
 const QUERY_URL = 'http://query.yahooapis.com/v1/public/yql' + QUERY_PARAMS + QUERY_VIEW + ' from ' + QUERY_TABLE
 
@@ -759,7 +760,8 @@ MyApplet.prototype = {
 
 , weatherUrl: function weatherUrl() {
     //let output = QUERY_URL + ' where location="' + this._woeid + '" and u="' + this.unitToUrl() + '"'
-    let output = QUERY_URL + this._woeid + '_' + this.unitToUrl() + '.xml"' 
+    //let output = QUERY_URL + this._woeid + '_' + this.unitToUrl() + '.xml"'
+    let output = QUERY_URL + encodeURIComponent(QUERY_XURL + 'w=' + this._woeid + '&u=' + this.unitToUrl() ) + '\"';
     return output
   }
 
