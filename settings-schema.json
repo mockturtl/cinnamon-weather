@@ -21,7 +21,7 @@
     }
   }
 , "windSpeedUnit":
-  { "type": "radiogroup"
+  { "type": "combobox"
   , "default": "kph"
   , "description": "Wind speed unit"
   , "options":
@@ -32,7 +32,7 @@
     }
   }
 , "pressureUnit":
-  { "type": "radiogroup"
+  { "type": "combobox"
   , "default": "mbar"
   , "description": "Atmospheric pressure unit"
   , "options":
