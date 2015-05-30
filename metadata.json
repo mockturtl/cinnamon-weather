@@ -2,6 +2,6 @@
 "uuid": "weather@mockturtl",
 "name": "Weather",
 "description": "View your local weather forecast",
-"max-instances": 3,
+"max-instances": "infinite",
 "version": "1.11.11"
 }
