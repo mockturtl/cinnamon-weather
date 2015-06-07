@@ -469,7 +469,7 @@ MyApplet.prototype = {
             wind_unit = 'knots'
             break
         }
-        this._currentWeatherWind.text = (wind_direction ? wind_direction + ' ' : '') + wind + ' ' + wind_unit
+        this._currentWeatherWind.text = (wind_direction ? wind_direction + ' ' : '') + wind + ' ' + _(this._windSpeedUnit)
         this._currentWeatherWindChill.text = wind_chill + ' ' + this.unitToUnicode()
 
         // Override pressure units with our preference
@@ -530,7 +530,7 @@ MyApplet.prototype = {
             pressure = Math.round(pressure)
             break
         }
-        this._currentWeatherPressure.text = pressure + ' ' + this._pressureUnit
+        this._currentWeatherPressure.text = pressure + ' ' + _(this._pressureUnit)
 
         // location is a button
         this._currentWeatherLocation.style_class = STYLE_LOCATION_LINK
