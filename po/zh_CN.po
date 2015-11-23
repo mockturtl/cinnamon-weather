@@ -408,7 +408,7 @@ msgstr "在系统面板显示天气情况（如：\" 晴朗\"）"
 #. cinnamon-weather->settings-schema.json->refreshInterval->description
 #, fuzzy
 msgid "Update interval"
-msgstr "更新间隔（分钟）"
+msgstr "更新间隔"
 
 #. cinnamon-weather->settings-schema.json->refreshInterval->units
 msgid "minutes"
