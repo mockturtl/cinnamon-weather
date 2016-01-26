@@ -213,6 +213,7 @@ function _(str) {
 function MyApplet(metadata, orientation, panelHeight, instanceId) {
   this.settings = new Settings.AppletSettings(this, UUID, instanceId)
   this._init(orientation, panelHeight, instanceId)
+  this.jsonAttempts = 0
 }
 
 MyApplet.prototype = {
@@ -369,7 +370,7 @@ MyApplet.prototype = {
   }
 
 , parseDay: function(abr) {
-    let yahoo_days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    let yahoo_days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
     for (let i = 0; i < yahoo_days.length; i++) {
       if (yahoo_days[i].substr(0, abr.length) == abr.toLowerCase()) {
         return i
@@ -379,11 +380,24 @@ MyApplet.prototype = {
   }
 
 , refreshWeather: function refreshWeather(recurse) {
+    let nextBuild = new Date(Date.now() + this._refreshInterval * 60000)
     //log("recurse=" + recurse)
     //this.dumpKeys()
     this.loadJsonAsync(this.weatherUrl(), function(json) {
       try {
         let weather = json.get_object_member('query').get_object_member('results').get_object_member('rss').get_object_member('channel')
+        //test data are within the last 3 hours
+        let build = new Date(weather.get_string_member('lastBuildDate')
+            .replace('CET', '+0100')
+            .replace('CEST', '+0200'))
+        if (Date.now() - build.getTime() > 10800000) {
+            this.jsonAttempts++
+            nextBuild = new Date(nextBuild.getTime() + 30000 - this._refreshInterval * 60000)
+            throw new Error('Outdated weather data: ' + build)
+        } else {
+          log('Good weather data after ' + (++this.jsonAttempts) + ' attempts')
+          this.jsonAttempts = 0
+        }
         let weather_c = weather.get_object_member('item').get_object_member('condition')
         let forecast = weather.get_object_member('item').get_array_member('forecast').get_elements()
 
@@ -427,6 +441,9 @@ MyApplet.prototype = {
         } else {
           this.set_applet_label('')
         }
+
+        let buildDay = this.localeDayNumeric(build.getDay())
+        this._currentWeatherBuildTime.text = buildDay + ' ' + build.getHours() + ':' + build.getMinutes()
 
         this._currentWeatherSummary.text = comment
         this._currentWeatherTemperature.text = temperature + ' ' + this.unitToUnicode()
@@ -565,14 +582,15 @@ MyApplet.prototype = {
         }
       } catch(error) {
         logError(error)
+      } finally {
+        if (recurse) {
+          let refresh = Math.max((nextBuild.getTime() - Date.now()) / 1000, 1)
+          Mainloop.timeout_add_seconds(refresh, Lang.bind(this, function() {
+            this.refreshWeather(true)
+          }))
+        }
       }
     })
-
-    if (recurse) {
-      Mainloop.timeout_add_seconds(this._refreshInterval * 60, Lang.bind(this, function() {
-        this.refreshWeather(true)
-      }))
-    }
   }
 
 , convertTo24: function convertTo24(timeStr) {
@@ -680,6 +698,7 @@ MyApplet.prototype = {
     bb.add_actor(ab)
 
     // Other labels
+    this._currentWeatherBuildTime = new St.Label(textOb)
     this._currentWeatherTemperature = new St.Label(textOb)
     this._currentWeatherHumidity = new St.Label(textOb)
     this._currentWeatherPressure = new St.Label(textOb)
@@ -700,6 +719,8 @@ MyApplet.prototype = {
     rb.add_actor(rb_captions)
     rb.add_actor(rb_values)
 
+    rb_captions.add_actor(new St.Label({text: _('Fetched:')}))
+    rb_values.add_actor(this._currentWeatherBuildTime)
     rb_captions.add_actor(new St.Label({text: _('Temperature:')}))
     rb_values.add_actor(this._currentWeatherTemperature)
     rb_captions.add_actor(new St.Label({text: _('Humidity:')}))
@@ -1012,8 +1033,12 @@ MyApplet.prototype = {
   }
 
 , localeDay: function(abr) {
-    let days = [_('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday'), _('Sunday')]
-    return days[this.parseDay(abr)]
+    return this.localeDayNumeric(this.parseDay(abr))
+  }
+
+, localeDayNumeric: function(num) {
+    let days = [_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')]
+    return days[num]
   }
 
 , compassDirection: function(deg) {
