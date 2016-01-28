@@ -71,7 +71,6 @@ msgid "Wind:"
 msgstr "风力："
 
 #: applet.js:714
-#, fuzzy
 msgid "Wind Chill:"
 msgstr "风寒指数："
 

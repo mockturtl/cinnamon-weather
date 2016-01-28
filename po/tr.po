@@ -72,7 +72,6 @@ msgid "Wind:"
 msgstr "Rüzgar :"
 
 #: applet.js:714
-#, fuzzy
 msgid "Wind Chill:"
 msgstr "Rüzgar :"
 
