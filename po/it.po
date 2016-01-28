@@ -70,7 +70,6 @@ msgid "Wind:"
 msgstr "Vento:"
 
 #: applet.js:714
-#, fuzzy
 msgid "Wind Chill:"
 msgstr "Temperatura percepita:"
 

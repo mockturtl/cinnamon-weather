@@ -73,7 +73,6 @@ msgid "Wind:"
 msgstr "Szél:"
 
 #: applet.js:714
-#, fuzzy
 msgid "Wind Chill:"
 msgstr "Szélérzet:"
 
