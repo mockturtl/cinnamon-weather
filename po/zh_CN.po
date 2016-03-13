@@ -3,7 +3,7 @@
 # Copyright (C) 2011
 # This file is distributed under the same license as the gnome-shell-extension-weather package.
 # bill <bill_zt@sina.com>, 2011.
-# Kiat, 2016.
+# giwhub, 2015-2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: simon 04-gnome-shell-extension-weather-452bcfe\n"
@@ -406,7 +406,7 @@ msgstr "英里每小时"
 
 #. cinnamon-weather->settings-schema.json->showCommentInPanel->description
 msgid "Show the weather condition (e.g., \"Windy\", \"Clear\") in the panel"
-msgstr "在系统面板显示天气情况（例如，“多风”，“晴朗”）"
+msgstr "在系统面板显示天气情况（例如, \"多风\", \"晴朗\"）"
 
 #. cinnamon-weather->settings-schema.json->refreshInterval->description
 msgid "Update interval"
