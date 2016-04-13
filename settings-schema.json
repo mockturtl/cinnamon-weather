@@ -3,7 +3,7 @@
   { "type": "button"
   , "description": "Get WOEID"
   , "callback": "woeidLookup"
-  , "tooltip": "http://edg3.co.uk/snippets/weather-location-codes/"
+  , "tooltip": "http://woeid.rosselliot.co.nz/"
   }
 , "woeid":
   { "type": "entry"

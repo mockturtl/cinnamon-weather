@@ -44,7 +44,7 @@ const Util = imports.misc.util
 const UUID = "weather@mockturtl"
 const APPLET_ICON = "view-refresh-symbolic"
 const CMD_SETTINGS = "cinnamon-settings applets " + UUID
-const WOEID_URL = "http://edg3.co.uk/snippets/weather-location-codes/"
+const WOEID_URL = "http://woeid.rosselliot.co.nz"
 const CMD_WOEID_LOOKUP = "xdg-open " + WOEID_URL
 
 // Conversion Factors
@@ -59,7 +59,7 @@ const EN_DASH = '\u2013'
 
 // Query
 const QUERY_PARAMS = '?format=json&q=select '
-const QUERY_TABLE = 'feednormalizer where url="http://xml.weather.yahoo.com/forecastrss/'
+const QUERY_TABLE = 'weather.forecast'
 const QUERY_VIEW = '*'
 const QUERY_URL = 'http://query.yahooapis.com/v1/public/yql' + QUERY_PARAMS + QUERY_VIEW + ' from ' + QUERY_TABLE
 
@@ -386,7 +386,7 @@ MyApplet.prototype = {
     //this.dumpKeys()
     this.loadJsonAsync(this.weatherUrl(), function(json) {
       try {
-        let weather = json.get_object_member('query').get_object_member('results').get_object_member('rss').get_object_member('channel')
+        let weather = json.get_object_member('query').get_object_member('results').get_object_member('channel')
         let weather_c = weather.get_object_member('item').get_object_member('condition')
         let forecast = weather.get_object_member('item').get_array_member('forecast').get_elements()
 
@@ -798,8 +798,8 @@ MyApplet.prototype = {
   }
 
 , weatherUrl: function weatherUrl() {
-    //let output = QUERY_URL + ' where location="' + this._woeid + '" and u="' + this.unitToUrl() + '"'
-    let output = QUERY_URL + this._woeid + '_' + this.unitToUrl() + '.xml"'
+    let output = QUERY_URL + ' where woeid="' + this._woeid + '" and u="' + this.unitToUrl() + '"'
+    //let output = QUERY_URL + this._woeid + '_' + this.unitToUrl() + '.xml"'
     return output
   }
 
