@@ -470,6 +470,12 @@ MyApplet.prototype = {
             break
         }
         this._currentWeatherWind.text = (wind_direction ? wind_direction + ' ' : '') + wind + ' ' + _(this._windSpeedUnit)
+
+        // Override wind chill units with our preference
+        // Yahoo API always returns Fahrenheit
+        if (this._temperatureUnit == WeatherUnits.CELSIUS) {
+          wind_chill = Math.round((wind_chill - 32) / 1.8)
+        }
         this._currentWeatherWindChill.text = wind_chill + ' ' + this.unitToUnicode()
 
         // Override pressure units with our preference
