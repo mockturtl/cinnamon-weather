@@ -70,7 +70,7 @@ const WEATHER_REFRESH_INTERVAL = 'refreshInterval'
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'showCommentInPanel'
 const WEATHER_SHOW_SUNRISE_KEY = 'showSunrise'
 const WEATHER_SHOW_24HOURS_KEY = 'show24Hours'
-const WEATHER_SHOW_FIVEDAY_FORECAST_KEY = 'showFivedayForecast'
+const WEATHER_FORECAST_DAYS = 'forecastDays'
 const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'showTextInPanel'
 const WEATHER_TRANSLATE_CONDITION_KEY = 'translateCondition'
 const WEATHER_TEMPERATURE_UNIT_KEY = 'temperatureUnit'
@@ -89,7 +89,7 @@ const KEYS = [
   WEATHER_SHOW_COMMENT_IN_PANEL_KEY,
   WEATHER_SHOW_SUNRISE_KEY,
   WEATHER_SHOW_24HOURS_KEY,
-  WEATHER_SHOW_FIVEDAY_FORECAST_KEY,
+  WEATHER_FORECAST_DAYS,
   WEATHER_REFRESH_INTERVAL,
   WEATHER_PRESSURE_UNIT_KEY
 ]
@@ -271,8 +271,7 @@ MyApplet.prototype = {
         this.updateIconType()
         this._applet_icon.icon_type = this._icon_type
         this._currentWeatherIcon.icon_type = this._icon_type
-        let daysToShow = this._showFivedayForecast ? 5 : 2
-        for (let i = 0; i < daysToShow; i++) {
+        for (let i = 0; i < this._forecastDays; i++) {
           this._forecast[i].Icon.icon_type = this._icon_type
         }
         this.refreshWeather(false)
@@ -561,8 +560,7 @@ MyApplet.prototype = {
         this._currentWeatherSunset.text = this._showSunrise ? (sunsetText + ': ' + sunsetTime) : ''
 
         // Refresh forecast
-        let daysToShow = this._showFivedayForecast ? 5 : 2
-        for (let i = 0; i < daysToShow; i++) {
+        for (let i = 0; i < this._forecastDays; i++) {
           let forecastUi = this._forecast[i]
           let forecastData = forecast[i].get_object()
 
@@ -750,8 +748,7 @@ MyApplet.prototype = {
     this._forecastBox = new St.BoxLayout()
     this._futureWeather.set_child(this._forecastBox)
 
-    let daysToShow = this._showFivedayForecast ? 5 : 2
-    for (let i = 0; i < daysToShow; i++) {
+    for (let i = 0; i < this._forecastDays; i++) {
       let forecastWeather = {}
 
       forecastWeather.Icon = new St.Icon({

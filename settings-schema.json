@@ -56,10 +56,14 @@
   , "default": false
   , "description": "Display time in 24 hour format"
   }
-, "showFivedayForecast":
-  { "type": "checkbox"
-  , "default": false
-  , "description": "Show 5-day forecast"
+, "forecastDays":
+  { "type": "spinbutton"
+  , "default": 2
+  , "min": 2
+  , "max": 7
+  , "units": "days"
+  , "step": 1
+  , "description": "Forecast length"
   }
 , "translateCondition":
   { "type": "checkbox"
