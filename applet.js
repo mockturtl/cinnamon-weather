@@ -68,6 +68,7 @@ const QUERY_URL = 'http://query.yahooapis.com/v1/public/yql' + QUERY_PARAMS + QU
 const WEATHER_CITY_KEY = 'locationLabelOverride'
 const WEATHER_REFRESH_INTERVAL = 'refreshInterval'
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'showCommentInPanel'
+const WEATHER_VERTICAL_ORIENTATION_KEY = 'verticalOrientation'
 const WEATHER_SHOW_SUNRISE_KEY = 'showSunrise'
 const WEATHER_SHOW_24HOURS_KEY = 'show24Hours'
 const WEATHER_SHOW_FIVEDAY_FORECAST_KEY = 'showFivedayForecast'
@@ -85,6 +86,7 @@ const KEYS = [
   WEATHER_CITY_KEY,
   WEATHER_WOEID_KEY,
   WEATHER_TRANSLATE_CONDITION_KEY,
+  WEATHER_VERTICAL_ORIENTATION_KEY,
   WEATHER_SHOW_TEXT_IN_PANEL_KEY,
   WEATHER_SHOW_COMMENT_IN_PANEL_KEY,
   WEATHER_SHOW_SUNRISE_KEY,
@@ -747,7 +749,7 @@ MyApplet.prototype = {
     this.destroyFutureWeather()
 
     this._forecast = []
-    this._forecastBox = new St.BoxLayout()
+    this._forecastBox = new St.BoxLayout({ vertical: this._verticalOrientation })
     this._futureWeather.set_child(this._forecastBox)
 
     let daysToShow = this._showFivedayForecast ? 5 : 2

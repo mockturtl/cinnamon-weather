@@ -46,6 +46,11 @@
     , "kPa": "kPa"
     }
   }
+, "verticalOrientation":
+  { "type": "checkbox"
+  , "default": false
+  , "description": "Vertical orientation"
+  }
 , "showSunrise":
   { "type": "checkbox"
   , "default": true
