@@ -44,7 +44,8 @@ const Util = imports.misc.util
 const UUID = "weather@mockturtl"
 const APPLET_ICON = "view-refresh-symbolic"
 const CMD_SETTINGS = "cinnamon-settings applets " + UUID
-const WOEID_URL = "http://woeid.rosselliot.co.nz"
+//const WOEID_URL = "http://edg3.co.uk/snippets/weather-location-codes/"
+const WOEID_URL = 'http://woeid.rosselliot.co.nz/'
 const CMD_WOEID_LOOKUP = "xdg-open " + WOEID_URL
 
 // Conversion Factors
@@ -56,13 +57,6 @@ const WEATHER_CONV_KNOTS_IN_MPS = 1.94384449
 const BLANK = '   '
 const ELLIPSIS = '...'
 const EN_DASH = '\u2013'
-
-// Query
-const QUERY_PARAMS = '?format=json&q=select '
-const QUERY_TABLE = 'weather.forecast'
-const QUERY_VIEW = '*'
-const QUERY_URL = 'http://query.yahooapis.com/v1/public/yql' + QUERY_PARAMS + QUERY_VIEW + ' from ' + QUERY_TABLE
-
 
 // Schema keys
 const WEATHER_CITY_KEY = 'locationLabelOverride'
@@ -364,6 +358,7 @@ MyApplet.prototype = {
 , loadJsonAsync: function loadJsonAsync(url, callback) {
     let context = this
     let message = Soup.Message.new('GET', url)
+    //log(url)
     _httpSession.queue_message(message, function soupQueue(session, message) {
       let jp = new Json.Parser()
       jp.load_from_data(message.response_body.data, -1)
@@ -384,23 +379,21 @@ MyApplet.prototype = {
 , refreshWeather: function refreshWeather(recurse) {
     //log("recurse=" + recurse)
     //this.dumpKeys()
-    this.loadJsonAsync(this.weatherUrl(), function(json) {
+
+    // Refresh current weather
+    this.loadJsonAsync(this.weatherUrl(), function(data) {
       try {
-        let weather = json.get_object_member('query').get_object_member('results').get_object_member('channel')
-        let weather_c = weather.get_object_member('item').get_object_member('condition')
+        let weather = data.get_object_member('query').get_object_member('results').get_object_member('channel')
+        let condition = weather.get_object_member('item').get_object_member('condition')
         let forecast = weather.get_object_member('item').get_array_member('forecast').get_elements()
-
-        let location = weather.get_object_member('location').get_string_member('city')
+        let city = weather.get_object_member('location').get_string_member('city')
         if (this.nonempty(this._locationLabelOverride))
-          location = this._locationLabelOverride
-
-        // Refresh current weather
-        let comment = weather_c.get_string_member('text')
+          city = this._locationLabelOverride
+        let conditionText = condition.get_string_member('text')
         if (this._translateCondition)
-          comment = this.weatherCondition(weather_c.get_string_member('code'))
+          conditionText = this.weatherCondition(condition.get_string_member('code'))
 
         let humidity = weather.get_object_member('atmosphere').get_string_member('humidity') + ' %'
-
         let pressure = weather.get_object_member('atmosphere').get_string_member('pressure')
         //let pressure_unit = weather.get_object_member('units').get_string_member('pressure')
         //log('pressure: ' + pressure + ' ' + pressure_unit)
@@ -408,14 +401,15 @@ MyApplet.prototype = {
         let sunrise = weather.get_object_member('astronomy').get_string_member('sunrise')
         let sunset = weather.get_object_member('astronomy').get_string_member('sunset')
 
-        let temperature = weather_c.get_string_member('temp')
+        let temperature = condition.get_string_member('temp')
 
-        let wind = weather.get_object_member('wind').get_string_member('speed')
-        let wind_chill = weather.get_object_member('wind').get_string_member('chill')
-        let wind_direction = this.compassDirection(weather.get_object_member('wind').get_string_member('direction'))
+        let wind = weather.get_object_member('wind')
+        let windChill = wind.get_string_member('chill')
+        let windSpeed = wind.get_string_member('speed')
+        let windDirection = this.compassDirection(wind.get_string_member('direction'))
         //let wind_unit = weather.get_object_member('units').get_string_member('speed')
 
-        let iconname = this.weatherIconSafely(weather_c.get_string_member('code'))
+        let iconname = this.weatherIconSafely(condition.get_string_member('code'))
         this._currentWeatherIcon.icon_name = iconname
         this._icon_type == St.IconType.SYMBOLIC ?
           this.set_applet_icon_symbolic_name(iconname) :
@@ -423,7 +417,7 @@ MyApplet.prototype = {
 
         if (this._showTextInPanel) {
           if (this._showCommentInPanel) {
-            this.set_applet_label(comment + ' ' + temperature + ' ' + this.unitToUnicode())
+            this.set_applet_label(conditionText + ' ' + temperature + ' ' + this.unitToUnicode())
           } else {
             this.set_applet_label(temperature + ' ' + this.unitToUnicode())
           }
@@ -431,7 +425,7 @@ MyApplet.prototype = {
           this.set_applet_label('')
         }
 
-        this._currentWeatherSummary.text = comment
+        this._currentWeatherSummary.text = conditionText
         this._currentWeatherTemperature.text = temperature + ' ' + this.unitToUnicode()
         this._currentWeatherHumidity.text = humidity
 
@@ -441,7 +435,7 @@ MyApplet.prototype = {
           case WeatherWindSpeedUnits.KPH:
             // Round to whole units
             if (this._temperatureUnit == WeatherUnits.FAHRENHEIT) {
-              wind = Math.round (wind / WEATHER_CONV_MPH_IN_MPS * WEATHER_CONV_KPH_IN_MPS)
+              wind = Math.round (windSpeed / WEATHER_CONV_MPH_IN_MPS * WEATHER_CONV_KPH_IN_MPS)
             }
             // Otherwise no conversion needed - already in correct units
             break
@@ -455,28 +449,22 @@ MyApplet.prototype = {
           case WeatherWindSpeedUnits.MPS:
             // Precision to one decimal place as 1 m/s is quite a large unit
             if (this._temperatureUnit == WeatherUnits.CELSIUS) {
-              wind = Math.round ((wind / WEATHER_CONV_KPH_IN_MPS) * 10)/ 10
+              wind = Math.round ((windSpeed / WEATHER_CONV_KPH_IN_MPS) * 10)/ 10
             } else {
-              wind = Math.round ((wind / WEATHER_CONV_MPH_IN_MPS) * 10)/ 10
+              wind = Math.round ((windSpeed / WEATHER_CONV_MPH_IN_MPS) * 10)/ 10
             }
             break
           case WeatherWindSpeedUnits.KNOTS:
             // Round to whole units
             if (this._temperatureUnit == WeatherUnits.CELSIUS) {
-              wind = Math.round (wind / WEATHER_CONV_KPH_IN_MPS * WEATHER_CONV_KNOTS_IN_MPS)
+              wind = Math.round (windSpeed / WEATHER_CONV_KPH_IN_MPS * WEATHER_CONV_KNOTS_IN_MPS)
             } else {
-              wind = Math.round (wind / WEATHER_CONV_MPH_IN_MPS * WEATHER_CONV_KNOTS_IN_MPS)
+              wind = Math.round (windSpeed / WEATHER_CONV_MPH_IN_MPS * WEATHER_CONV_KNOTS_IN_MPS)
             }
             break
         }
-        this._currentWeatherWind.text = (wind_direction ? wind_direction + ' ' : '') + wind + ' ' + _(this._windSpeedUnit)
-
-        // Override wind chill units with our preference
-        // Yahoo API always returns Fahrenheit
-        if (this._temperatureUnit == WeatherUnits.CELSIUS) {
-          wind_chill = Math.round((wind_chill - 32) / 1.8)
-        }
-        this._currentWeatherWindChill.text = wind_chill + ' ' + this.unitToUnicode()
+        this._currentWeatherWind.text = (windDirection ? windDirection + ' ' : '') + windSpeed + ' ' + _(this._windSpeedUnit)
+        this._currentWeatherWindChill.text = windChill + ' ' + this.unitToUnicode()
 
         // Override pressure units with our preference
         // Need to consider what units the Yahoo API has returned it in
@@ -548,7 +536,7 @@ MyApplet.prototype = {
 
         // location is a button
         this._currentWeatherLocation.url = weather.get_string_member('link')
-        this._currentWeatherLocation.label = _(location)
+        this._currentWeatherLocation.label = _(city)
 
         // gettext can't see these inline
         let sunriseText = _('Sunrise')
@@ -804,9 +792,9 @@ MyApplet.prototype = {
   }
 
 , weatherUrl: function weatherUrl() {
-    let output = QUERY_URL + ' where woeid="' + this._woeid + '" and u="' + this.unitToUrl() + '"'
+    //let output = QUERY_URL + ' where location="' + this._woeid + '" and u="' + this.unitToUrl() + '"'
     //let output = QUERY_URL + this._woeid + '_' + this.unitToUrl() + '.xml"'
-    return output
+    return 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20%3D%20%22' + this._woeid + '%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
   }
 
 , weatherIcon: function(code) {
