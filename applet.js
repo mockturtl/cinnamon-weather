@@ -407,6 +407,10 @@ MyApplet.prototype = {
 
         let sunrise = weather.get_object_member('astronomy').get_string_member('sunrise')
         let sunset = weather.get_object_member('astronomy').get_string_member('sunset')
+        //log('sunrise: ' + sunrise)
+        //log('sunset: ' + sunset)
+        sunrise = this.normalizeMinutes(sunrise)
+        sunset = this.normalizeMinutes(sunset)
 
         let temperature = weather_c.get_string_member('temp')
 
@@ -589,6 +593,22 @@ MyApplet.prototype = {
         this.refreshWeather(true)
       }))
     }
+  }
+
+, normalizeMinutes: function normalizeMinutes(timeStr) {
+    // verify expected time format
+    let result = timeStr.match(/^\d{1,2}:(\d{1,2}) [ap]m$/)
+
+    if (result != null) {
+      let minutes = result[1]
+      // single-digit minutes values need normalizing (zero-padding)
+      if (minutes.length < 2) {
+        let timeSegments = timeStr.split(':')
+        return timeSegments[0] + ':0' + timeSegments[1]
+      }
+    }
+
+    return timeStr
   }
 
 , convertTo24: function convertTo24(timeStr) {
