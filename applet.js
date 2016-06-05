@@ -405,9 +405,6 @@ MyApplet.prototype = {
         //let pressure_unit = weather.get_object_member('units').get_string_member('pressure')
         //log('pressure: ' + pressure + ' ' + pressure_unit)
 
-        let sunrise = weather.get_object_member('astronomy').get_string_member('sunrise')
-        let sunset = weather.get_object_member('astronomy').get_string_member('sunset')
-
         let temperature = weather_c.get_string_member('temp')
 
         let wind = weather.get_object_member('wind').get_string_member('speed')
@@ -554,8 +551,9 @@ MyApplet.prototype = {
         let sunriseText = _('Sunrise')
         let sunsetText = _('Sunset')
 
-        let sunriseTime = this._show24Hours ? (this.convertTo24(sunrise)) : sunrise
-        let sunsetTime = this._show24Hours ? (this.convertTo24(sunset)) : sunset
+        let astronomyJson = weather.get_object_member('astronomy')
+        let sunriseTime = this.formatAstronomyTime(astronomyJson, 'sunrise')
+        let sunsetTime = this.formatAstronomyTime(astronomyJson, 'sunset')
 
         this._currentWeatherSunrise.text = this._showSunrise ? (sunriseText + ': ' + sunriseTime ) : ''
         this._currentWeatherSunset.text = this._showSunrise ? (sunsetText + ': ' + sunsetTime) : ''
@@ -589,6 +587,22 @@ MyApplet.prototype = {
         this.refreshWeather(true)
       }))
     }
+  }
+
+, normalizeMinutes: function normalizeMinutes(timeStr) {
+    // verify expected time format
+    let result = timeStr.match(/^\d{1,2}:(\d{1,2}) [ap]m$/)
+
+    if (result != null) {
+      let minutes = result[1]
+      // single-digit minutes values need normalizing (zero-padding)
+      if (minutes.length < 2) {
+        let timeSegments = timeStr.split(':')
+        return timeSegments[0] + ':0' + timeSegments[1]
+      }
+    }
+
+    return timeStr
   }
 
 , convertTo24: function convertTo24(timeStr) {
@@ -1040,6 +1054,13 @@ MyApplet.prototype = {
     let directions = [_('N'), _('NE'), _('E'), _('SE'), _('S'), _('SW'), _('W'), _('NW')]
     return directions[Math.round(deg / 45) % directions.length]
   }
+
+, formatAstronomyTime: function(astronomyJson, key) {
+    let val = astronomyJson.get_string_member(key)
+    let pad = this.normalizeMinutes(val)
+    return this._show24Hours ? (this.convertTo24(pad)) : pad
+  }
+
 }
 
 //----------------------------------------------------------------------
