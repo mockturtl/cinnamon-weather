@@ -103,7 +103,7 @@ EOF
 	git add ${VERSION_FILE}
 	# allow manual version-bump commits; see git-diff(1)
 	git diff --quiet --staged || git commit -m 'bump version'
-	git tag -u ${GH_KEY_ID} v${VERSION}
+	git tag -u ${GH_KEY_ID} --cleanup=whitespace v${VERSION}
 	cat << EOF
 Done.  Now run './deploy ${VERSION}' to merge into ${DEPLOY_BRANCH} and push.
 
