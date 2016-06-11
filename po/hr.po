@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-30 12:17-0500\n"
+"POT-Creation-Date: 2016-06-11 15:04-0400\n"
 "PO-Revision-Date: 2014-07-20 12:51+0100\n"
 "Last-Translator: \n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -17,287 +17,287 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: applet.js:247
+#: applet.js:249
 msgid "..."
 msgstr "..."
 
-#: applet.js:248
+#: applet.js:250
 msgid "Click to open"
 msgstr "Klikni za otvaranje"
 
-#: applet.js:288
+#: applet.js:289
 msgid "Settings"
 msgstr "Postavke"
 
-#: applet.js:548
+#: applet.js:552
 msgid "Sunrise"
 msgstr "Izlazak sunca"
 
-#: applet.js:549
+#: applet.js:553
 msgid "Sunset"
 msgstr "Zalazak sunca"
 
-#: applet.js:625
+#: applet.js:645
 msgid "Loading current weather ..."
 msgstr "Učitavanje trenutne prognoze..."
 
-#: applet.js:626
+#: applet.js:646
 msgid "Loading future weather ..."
 msgstr "Učitavanje buduće prognoze..."
 
-#: applet.js:648
+#: applet.js:668
 msgid "Loading ..."
 msgstr "Učitavanje..."
 
-#: applet.js:654
+#: applet.js:674
 msgid "Refresh"
 msgstr ""
 
-#: applet.js:717
+#: applet.js:737
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: applet.js:719
+#: applet.js:739
 msgid "Humidity:"
 msgstr "Vlažnost:"
 
-#: applet.js:721
+#: applet.js:741
 msgid "Pressure:"
 msgstr "Tlak:"
 
-#: applet.js:723
+#: applet.js:743
 msgid "Wind:"
 msgstr "Vjetar:"
 
-#: applet.js:725
+#: applet.js:745
 msgid "Wind Chill:"
 msgstr "Kao da je:"
 
-#: applet.js:931
+#: applet.js:950
 msgid "Tornado"
 msgstr "Tornado"
 
-#: applet.js:933
+#: applet.js:952
 msgid "Tropical storm"
 msgstr "Tropska oluja"
 
-#: applet.js:935
+#: applet.js:954
 msgid "Hurricane"
 msgstr "Uragan"
 
-#: applet.js:937
+#: applet.js:956
 msgid "Severe thunderstorms"
 msgstr "Jaka grmljavinska oluja"
 
-#: applet.js:939
+#: applet.js:958
 msgid "Thunderstorms"
 msgstr "Oluje"
 
-#: applet.js:941
+#: applet.js:960
 msgid "Mixed rain and snow"
 msgstr "Pomiješana kiša i led"
 
-#: applet.js:943
+#: applet.js:962
 msgid "Mixed rain and sleet"
 msgstr "Miješana kiša i susnježica"
 
-#: applet.js:945
+#: applet.js:964
 msgid "Mixed snow and sleet"
 msgstr "Miješani snijeg i susnježica"
 
-#: applet.js:947
+#: applet.js:966
 msgid "Freezing drizzle"
 msgstr "Ledeno rominjanje"
 
-#: applet.js:949
+#: applet.js:968
 msgid "Drizzle"
 msgstr "Rominjanje"
 
-#: applet.js:951
+#: applet.js:970
 msgid "Freezing rain"
 msgstr "Ledena kiša"
 
-#: applet.js:953 applet.js:955
+#: applet.js:972 applet.js:974
 msgid "Showers"
 msgstr "Pljuskovi"
 
-#: applet.js:957
+#: applet.js:976
 msgid "Snow flurries"
 msgstr "Snježni naleti"
 
-#: applet.js:959
+#: applet.js:978
 msgid "Light snow showers"
 msgstr "Slabiji gusti snijeg"
 
-#: applet.js:961
+#: applet.js:980
 msgid "Blowing snow"
 msgstr "Snježni zapusi"
 
-#: applet.js:963
+#: applet.js:982
 msgid "Snow"
 msgstr "Snijeg"
 
-#: applet.js:965
+#: applet.js:984
 msgid "Hail"
 msgstr "Tuča"
 
-#: applet.js:967
+#: applet.js:986
 msgid "Sleet"
 msgstr "Susnježica"
 
-#: applet.js:969
+#: applet.js:988
 msgid "Dust"
 msgstr "Prašina"
 
-#: applet.js:971
+#: applet.js:990
 msgid "Foggy"
 msgstr "Maglovito"
 
-#: applet.js:973
+#: applet.js:992
 msgid "Haze"
 msgstr "Izmaglica"
 
-#: applet.js:975
+#: applet.js:994
 msgid "Smoky"
 msgstr "Dim"
 
-#: applet.js:977
+#: applet.js:996
 msgid "Blustery"
 msgstr "Vijavica"
 
-#: applet.js:979
+#: applet.js:998
 msgid "Windy"
 msgstr "Vjetrovito"
 
-#: applet.js:981
+#: applet.js:1000
 msgid "Cold"
 msgstr "Hladno"
 
-#: applet.js:983
+#: applet.js:1002
 msgid "Cloudy"
 msgstr "Oblačno"
 
-#: applet.js:986
+#: applet.js:1005
 msgid "Mostly cloudy"
 msgstr "Pretežno oblačno"
 
-#: applet.js:989 applet.js:1015
+#: applet.js:1008 applet.js:1034
 msgid "Partly cloudy"
 msgstr "Djelomično oblačno"
 
-#: applet.js:991
+#: applet.js:1010
 msgid "Clear"
 msgstr "Vedro"
 
-#: applet.js:993
+#: applet.js:1012
 msgid "Sunny"
 msgstr "Sunčano"
 
-#: applet.js:996
+#: applet.js:1015
 msgid "Fair"
 msgstr "Vedro"
 
-#: applet.js:998
+#: applet.js:1017
 msgid "Mixed rain and hail"
 msgstr "Miješana kiša i tuča"
 
-#: applet.js:1000
+#: applet.js:1019
 msgid "Hot"
 msgstr "Vruće"
 
-#: applet.js:1002
+#: applet.js:1021
 msgid "Isolated thunderstorms"
 msgstr "Mjestimična grmljavinska oluja"
 
-#: applet.js:1005
+#: applet.js:1024
 msgid "Scattered thunderstorms"
 msgstr "Razasute grmljavinske oluje"
 
-#: applet.js:1007
+#: applet.js:1026
 msgid "Scattered showers"
 msgstr "Razasuti pljuskovi"
 
-#: applet.js:1009 applet.js:1013
+#: applet.js:1028 applet.js:1032
 msgid "Heavy snow"
 msgstr "Jak snijeg"
 
-#: applet.js:1011
+#: applet.js:1030
 msgid "Scattered snow showers"
 msgstr "Raštrkani snijeg"
 
-#: applet.js:1017
+#: applet.js:1036
 msgid "Thundershowers"
 msgstr "Grmljavinski pljuskovi"
 
-#: applet.js:1019
+#: applet.js:1038
 msgid "Snow showers"
 msgstr "Mećave"
 
-#: applet.js:1021
+#: applet.js:1040
 msgid "Isolated thundershowers"
 msgstr "Lokalni grmljavinski pljuskovi"
 
-#: applet.js:1024
+#: applet.js:1043
 msgid "Not available"
 msgstr "Nedostupno"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Monday"
 msgstr "Ponedjeljak"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Tuesday"
 msgstr "Utorak"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Wednesday"
 msgstr "Srijeda"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Thursday"
 msgstr "Četvrtak"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Friday"
 msgstr "Petak"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Saturday"
 msgstr "Subota"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Sunday"
 msgstr "Nedjelja"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "N"
 msgstr "S"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "NE"
 msgstr "SI"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "E"
 msgstr "I"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "SE"
 msgstr "JI"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "S"
 msgstr "J"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "SW"
 msgstr "JZ"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "W"
 msgstr "Z"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "NW"
 msgstr "SZ"
 
@@ -305,40 +305,8 @@ msgstr "SZ"
 msgid "Get WOEID"
 msgstr "Nabavite WOEID kôd"
 
-#. cinnamon-weather->settings-schema.json->pressureUnit->description
-msgid "Atmospheric pressure unit"
-msgstr ""
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "psi"
-msgstr ""
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "atm"
-msgstr ""
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "kPa"
-msgstr ""
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "Pa"
-msgstr ""
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "mm Hg"
-msgstr ""
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "at"
-msgstr ""
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "mbar"
-msgstr ""
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "in Hg"
+#. cinnamon-weather->settings-schema.json->verticalOrientation->description
+msgid "Vertical orientation"
 msgstr ""
 
 #. cinnamon-weather->settings-schema.json->showTextInPanel->description
@@ -377,6 +345,14 @@ msgstr "Ručno upišite lokaciju"
 msgid "Display time in 24 hour format"
 msgstr ""
 
+#. cinnamon-weather->settings-schema.json->forecastDays->description
+msgid "Forecast length"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->forecastDays->units
+msgid "days"
+msgstr ""
+
 #. cinnamon-weather->settings-schema.json->showSunrise->description
 msgid "Show sunrise / sunset times"
 msgstr "Prikaži vrijeme izlaska/zaslaska sunca"
@@ -405,6 +381,42 @@ msgstr "mph"
 msgid "Show the weather condition (e.g., \"Windy\", \"Clear\") in the panel"
 msgstr "Prikaži stanje vremena (npr., \"Vjetrovito\", \"Vedro\") na panelu"
 
+#. cinnamon-weather->settings-schema.json->pressureUnit->description
+msgid "Atmospheric pressure unit"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "psi"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "atm"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "kPa"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "Pa"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "mm Hg"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "at"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "mbar"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "in Hg"
+msgstr ""
+
 #. cinnamon-weather->settings-schema.json->refreshInterval->description
 #, fuzzy
 msgid "Update interval"
@@ -418,10 +430,6 @@ msgstr ""
 msgid "Symbolic icons"
 msgstr "Prikaži simboličke ikone"
 
-#. cinnamon-weather->settings-schema.json->showFivedayForecast->description
-msgid "Show 5-day forecast"
-msgstr "Prikaži 5-dnevnu prognozu"
-
 #. cinnamon-weather->metadata.json->description
 msgid "View your local weather forecast"
 msgstr ""
@@ -429,6 +437,9 @@ msgstr ""
 #. cinnamon-weather->metadata.json->name
 msgid "Weather"
 msgstr ""
+
+#~ msgid "Show 5-day forecast"
+#~ msgstr "Prikaži 5-dnevnu prognozu"
 
 #~ msgid "Please wait"
 #~ msgstr "Malo pričekajte"

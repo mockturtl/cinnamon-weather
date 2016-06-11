@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-30 12:17-0500\n"
+"POT-Creation-Date: 2016-06-11 15:04-0400\n"
 "PO-Revision-Date: 2011-06-09 17:43+0200\n"
 "Last-Translator: Mauricio Barraza <mauricio@barraza.se>\n"
 "Language-Team: \n"
@@ -16,287 +16,287 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: applet.js:247
+#: applet.js:249
 msgid "..."
 msgstr "..."
 
-#: applet.js:248
+#: applet.js:250
 msgid "Click to open"
 msgstr "Klicka för att öppna"
 
-#: applet.js:288
+#: applet.js:289
 msgid "Settings"
 msgstr "Inställningar"
 
-#: applet.js:548
+#: applet.js:552
 msgid "Sunrise"
 msgstr "Soluppgång"
 
-#: applet.js:549
+#: applet.js:553
 msgid "Sunset"
 msgstr "Solnedgång"
 
-#: applet.js:625
+#: applet.js:645
 msgid "Loading current weather ..."
 msgstr "Laddar nuvarande väder..."
 
-#: applet.js:626
+#: applet.js:646
 msgid "Loading future weather ..."
 msgstr "Laddar kommande väder..."
 
-#: applet.js:648
+#: applet.js:668
 msgid "Loading ..."
 msgstr "Laddar..."
 
-#: applet.js:654
+#: applet.js:674
 msgid "Refresh"
 msgstr ""
 
-#: applet.js:717
+#: applet.js:737
 msgid "Temperature:"
 msgstr "Temperatur:"
 
-#: applet.js:719
+#: applet.js:739
 msgid "Humidity:"
 msgstr "Fuktighet:"
 
-#: applet.js:721
+#: applet.js:741
 msgid "Pressure:"
 msgstr "Lufttryck:"
 
-#: applet.js:723
+#: applet.js:743
 msgid "Wind:"
 msgstr "Vind:"
 
-#: applet.js:725
+#: applet.js:745
 msgid "Wind Chill:"
 msgstr "Vindavkylning:"
 
-#: applet.js:931
+#: applet.js:950
 msgid "Tornado"
 msgstr "Tornado"
 
-#: applet.js:933
+#: applet.js:952
 msgid "Tropical storm"
 msgstr "Tropisk storm"
 
-#: applet.js:935
+#: applet.js:954
 msgid "Hurricane"
 msgstr "Orkan"
 
-#: applet.js:937
+#: applet.js:956
 msgid "Severe thunderstorms"
 msgstr "Kraftig åska"
 
-#: applet.js:939
+#: applet.js:958
 msgid "Thunderstorms"
 msgstr "Åska"
 
-#: applet.js:941
+#: applet.js:960
 msgid "Mixed rain and snow"
 msgstr "Snöblandat regn"
 
-#: applet.js:943
+#: applet.js:962
 msgid "Mixed rain and sleet"
 msgstr "Regn och slask"
 
-#: applet.js:945
+#: applet.js:964
 msgid "Mixed snow and sleet"
 msgstr "Snö och slask"
 
-#: applet.js:947
+#: applet.js:966
 msgid "Freezing drizzle"
 msgstr "Underkylt duggregn"
 
-#: applet.js:949
+#: applet.js:968
 msgid "Drizzle"
 msgstr "Duggregn"
 
-#: applet.js:951
+#: applet.js:970
 msgid "Freezing rain"
 msgstr "Underkylt regn"
 
-#: applet.js:953 applet.js:955
+#: applet.js:972 applet.js:974
 msgid "Showers"
 msgstr "Regnskurar"
 
-#: applet.js:957
+#: applet.js:976
 msgid "Snow flurries"
 msgstr "Lätt snöfall"
 
-#: applet.js:959
+#: applet.js:978
 msgid "Light snow showers"
 msgstr "Lätta snöbyar"
 
-#: applet.js:961
+#: applet.js:980
 msgid "Blowing snow"
 msgstr "Snöstorm"
 
-#: applet.js:963
+#: applet.js:982
 msgid "Snow"
 msgstr "Snö"
 
-#: applet.js:965
+#: applet.js:984
 msgid "Hail"
 msgstr "Hagel"
 
-#: applet.js:967
+#: applet.js:986
 msgid "Sleet"
 msgstr "Slask"
 
-#: applet.js:969
+#: applet.js:988
 msgid "Dust"
 msgstr "Damm"
 
-#: applet.js:971
+#: applet.js:990
 msgid "Foggy"
 msgstr "Dimma"
 
-#: applet.js:973
+#: applet.js:992
 msgid "Haze"
 msgstr "Dis"
 
-#: applet.js:975
+#: applet.js:994
 msgid "Smoky"
 msgstr "Rök"
 
-#: applet.js:977
+#: applet.js:996
 msgid "Blustery"
 msgstr "Vindbyar"
 
-#: applet.js:979
+#: applet.js:998
 msgid "Windy"
 msgstr "Blåsigt"
 
-#: applet.js:981
+#: applet.js:1000
 msgid "Cold"
 msgstr "Kallt"
 
-#: applet.js:983
+#: applet.js:1002
 msgid "Cloudy"
 msgstr "Molnigt"
 
-#: applet.js:986
+#: applet.js:1005
 msgid "Mostly cloudy"
 msgstr "Mest molnigt"
 
-#: applet.js:989 applet.js:1015
+#: applet.js:1008 applet.js:1034
 msgid "Partly cloudy"
 msgstr "Delvis molnigt"
 
-#: applet.js:991
+#: applet.js:1010
 msgid "Clear"
 msgstr "Klart"
 
-#: applet.js:993
+#: applet.js:1012
 msgid "Sunny"
 msgstr "Soligt"
 
-#: applet.js:996
+#: applet.js:1015
 msgid "Fair"
 msgstr "Uppehåll"
 
-#: applet.js:998
+#: applet.js:1017
 msgid "Mixed rain and hail"
 msgstr "Regn och hagel"
 
-#: applet.js:1000
+#: applet.js:1019
 msgid "Hot"
 msgstr "Varmt"
 
-#: applet.js:1002
+#: applet.js:1021
 msgid "Isolated thunderstorms"
 msgstr "Lokala åskbyar"
 
-#: applet.js:1005
+#: applet.js:1024
 msgid "Scattered thunderstorms"
 msgstr "Enstaka åskabyar"
 
-#: applet.js:1007
+#: applet.js:1026
 msgid "Scattered showers"
 msgstr "Enstaka regnskurar"
 
-#: applet.js:1009 applet.js:1013
+#: applet.js:1028 applet.js:1032
 msgid "Heavy snow"
 msgstr "Häftigt snöfall"
 
-#: applet.js:1011
+#: applet.js:1030
 msgid "Scattered snow showers"
 msgstr "Enstaka snöbyar"
 
-#: applet.js:1017
+#: applet.js:1036
 msgid "Thundershowers"
 msgstr "Åskbyar"
 
-#: applet.js:1019
+#: applet.js:1038
 msgid "Snow showers"
 msgstr "Snöbyar"
 
-#: applet.js:1021
+#: applet.js:1040
 msgid "Isolated thundershowers"
 msgstr "Lokala åskbyar"
 
-#: applet.js:1024
+#: applet.js:1043
 msgid "Not available"
 msgstr "Inte tillgänglig"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Monday"
 msgstr "Måndag"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Tuesday"
 msgstr "Tisdag"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Thursday"
 msgstr "Torsdag"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Friday"
 msgstr "Fredag"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Saturday"
 msgstr "Lördag"
 
-#: applet.js:1029
+#: applet.js:1048
 msgid "Sunday"
 msgstr "Söndag"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "N"
 msgstr "N"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "NE"
 msgstr "NÖ"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "E"
 msgstr "Ö"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "SE"
 msgstr "SÖ"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "S"
 msgstr "S"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "SW"
 msgstr "SV"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "W"
 msgstr "V"
 
-#: applet.js:1034
+#: applet.js:1053
 msgid "NW"
 msgstr "NV"
 
@@ -304,41 +304,9 @@ msgstr "NV"
 msgid "Get WOEID"
 msgstr "Hämta WOEID"
 
-#. cinnamon-weather->settings-schema.json->pressureUnit->description
-msgid "Atmospheric pressure unit"
-msgstr "Enhet för atmosfäriskt tryck"
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "psi"
-msgstr "psi"
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "atm"
-msgstr "atm"
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "kPa"
-msgstr "kPa"
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "Pa"
-msgstr "Pa"
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "mm Hg"
-msgstr "mm Hg"
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "at"
-msgstr "at"
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "mbar"
-msgstr "mbar"
-
-#. cinnamon-weather->settings-schema.json->pressureUnit->options
-msgid "in Hg"
-msgstr "in Hg"
+#. cinnamon-weather->settings-schema.json->verticalOrientation->description
+msgid "Vertical orientation"
+msgstr ""
 
 #. cinnamon-weather->settings-schema.json->showTextInPanel->description
 msgid "Display current temperature in panel"
@@ -376,6 +344,14 @@ msgstr "Förbigå lokal etikett"
 msgid "Display time in 24 hour format"
 msgstr "Visa tid i 24-timmarsformat"
 
+#. cinnamon-weather->settings-schema.json->forecastDays->description
+msgid "Forecast length"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->forecastDays->units
+msgid "days"
+msgstr ""
+
 #. cinnamon-weather->settings-schema.json->showSunrise->description
 msgid "Show sunrise / sunset times"
 msgstr "Visa tid soluppgång / solnedgång"
@@ -404,6 +380,42 @@ msgstr "mph"
 msgid "Show the weather condition (e.g., \"Windy\", \"Clear\") in the panel"
 msgstr "Visa väderförhållande (dvs \"Blåsigt\", \"Klart\") i panelen"
 
+#. cinnamon-weather->settings-schema.json->pressureUnit->description
+msgid "Atmospheric pressure unit"
+msgstr "Enhet för atmosfäriskt tryck"
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "psi"
+msgstr "psi"
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "atm"
+msgstr "atm"
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "kPa"
+msgstr "kPa"
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "Pa"
+msgstr "Pa"
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "mm Hg"
+msgstr "mm Hg"
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "at"
+msgstr "at"
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "mbar"
+msgstr "mbar"
+
+#. cinnamon-weather->settings-schema.json->pressureUnit->options
+msgid "in Hg"
+msgstr "in Hg"
+
 #. cinnamon-weather->settings-schema.json->refreshInterval->description
 msgid "Update interval"
 msgstr "Uppdateringsintervall"
@@ -416,10 +428,6 @@ msgstr "minuter"
 msgid "Symbolic icons"
 msgstr "Symboliska ikoner"
 
-#. cinnamon-weather->settings-schema.json->showFivedayForecast->description
-msgid "Show 5-day forecast"
-msgstr "Visa 5-dygnsprognos"
-
 #. cinnamon-weather->metadata.json->description
 msgid "View your local weather forecast"
 msgstr ""
@@ -427,6 +435,9 @@ msgstr ""
 #. cinnamon-weather->metadata.json->name
 msgid "Weather"
 msgstr ""
+
+#~ msgid "Show 5-day forecast"
+#~ msgstr "Visa 5-dygnsprognos"
 
 #~ msgid "Please wait"
 #~ msgstr "Vänligen vänta"
