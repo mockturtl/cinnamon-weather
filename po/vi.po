@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-11 15:04-0400\n"
+"POT-Creation-Date: 2016-06-12 12:27-0400\n"
 "PO-Revision-Date: 2012-06-17 17:04+0700\n"
 "Last-Translator: Ngô Trung <ndtrung4419@gmail.com>\n"
 "Language-Team: \n"
@@ -30,276 +30,276 @@ msgstr ""
 msgid "Settings"
 msgstr "Thiết lập thời tiết"
 
-#: applet.js:552
+#: applet.js:555
 msgid "Sunrise"
 msgstr "Bình minh"
 
-#: applet.js:553
+#: applet.js:556
 msgid "Sunset"
 msgstr "Hoàng hôn"
 
-#: applet.js:645
+#: applet.js:648
 msgid "Loading current weather ..."
 msgstr "Đang tải dữ liệu thời tiết hiện tại..."
 
-#: applet.js:646
+#: applet.js:649
 msgid "Loading future weather ..."
 msgstr "Đang tải dữ liệu dự báo thời tiết..."
 
-#: applet.js:668
+#: applet.js:671
 msgid "Loading ..."
 msgstr "Đang tải..."
 
-#: applet.js:674
+#: applet.js:677
 msgid "Refresh"
 msgstr ""
 
-#: applet.js:737
+#: applet.js:740
 #, fuzzy
 msgid "Temperature:"
 msgstr "Đơn vị đo nhiệt độ:"
 
-#: applet.js:739
+#: applet.js:742
 msgid "Humidity:"
 msgstr "Độ ẩm:"
 
-#: applet.js:741
+#: applet.js:744
 msgid "Pressure:"
 msgstr "Áp suất:"
 
-#: applet.js:743
+#: applet.js:746
 msgid "Wind:"
 msgstr "Gió:"
 
-#: applet.js:745
+#: applet.js:748
 msgid "Wind Chill:"
 msgstr "Gió:"
 
-#: applet.js:950
+#: applet.js:953
 msgid "Tornado"
 msgstr "Lốc xoáy"
 
-#: applet.js:952
+#: applet.js:955
 msgid "Tropical storm"
 msgstr "Bão nhiệt đới"
 
-#: applet.js:954
+#: applet.js:957
 msgid "Hurricane"
 msgstr "Cuồng phong"
 
-#: applet.js:956
+#: applet.js:959
 msgid "Severe thunderstorms"
 msgstr "Giông nguy hiểm"
 
-#: applet.js:958
+#: applet.js:961
 msgid "Thunderstorms"
 msgstr "Giông"
 
-#: applet.js:960
+#: applet.js:963
 msgid "Mixed rain and snow"
 msgstr "Mưa và tuyết"
 
-#: applet.js:962
+#: applet.js:965
 msgid "Mixed rain and sleet"
 msgstr "Mưa và mưa tuyết"
 
-#: applet.js:964
+#: applet.js:967
 msgid "Mixed snow and sleet"
 msgstr "Tuyết và mưa tuyết"
 
-#: applet.js:966
+#: applet.js:969
 msgid "Freezing drizzle"
 msgstr "Mưa phùn rét"
 
-#: applet.js:968
+#: applet.js:971
 msgid "Drizzle"
 msgstr "Mưa phùn"
 
-#: applet.js:970
+#: applet.js:973
 msgid "Freezing rain"
 msgstr "Mưa rét"
 
-#: applet.js:972 applet.js:974
+#: applet.js:975 applet.js:977
 msgid "Showers"
 msgstr "Mưa rào"
 
-#: applet.js:976
+#: applet.js:979
 msgid "Snow flurries"
 msgstr "Tuyết bất chợt"
 
-#: applet.js:978
+#: applet.js:981
 msgid "Light snow showers"
 msgstr "Tuyết rào nhẹ"
 
-#: applet.js:980
+#: applet.js:983
 msgid "Blowing snow"
 msgstr "Gió tuyết"
 
-#: applet.js:982
+#: applet.js:985
 msgid "Snow"
 msgstr "Tuyết"
 
-#: applet.js:984
+#: applet.js:987
 msgid "Hail"
 msgstr "Mưa đá"
 
-#: applet.js:986
+#: applet.js:989
 msgid "Sleet"
 msgstr "Mưa tuyết"
 
-#: applet.js:988
+#: applet.js:991
 msgid "Dust"
 msgstr "Bụi mù"
 
-#: applet.js:990
+#: applet.js:993
 msgid "Foggy"
 msgstr "Sương mù"
 
-#: applet.js:992
+#: applet.js:995
 msgid "Haze"
 msgstr "Bụi mù"
 
-#: applet.js:994
+#: applet.js:997
 msgid "Smoky"
 msgstr "Khói mù"
 
-#: applet.js:996
+#: applet.js:999
 msgid "Blustery"
 msgstr "Gió dữ dội"
 
-#: applet.js:998
+#: applet.js:1001
 msgid "Windy"
 msgstr "Gió"
 
-#: applet.js:1000
+#: applet.js:1003
 msgid "Cold"
 msgstr "Lạnh"
 
-#: applet.js:1002
+#: applet.js:1005
 msgid "Cloudy"
 msgstr "Mây mù"
 
-#: applet.js:1005
+#: applet.js:1008
 msgid "Mostly cloudy"
 msgstr "Nhiều mây"
 
-#: applet.js:1008 applet.js:1034
+#: applet.js:1011 applet.js:1037
 msgid "Partly cloudy"
 msgstr "Ít mây"
 
-#: applet.js:1010
+#: applet.js:1013
 msgid "Clear"
 msgstr "Trời trong"
 
-#: applet.js:1012
+#: applet.js:1015
 msgid "Sunny"
 msgstr "Nắng"
 
-#: applet.js:1015
+#: applet.js:1018
 msgid "Fair"
 msgstr "Bình thường"
 
-#: applet.js:1017
+#: applet.js:1020
 msgid "Mixed rain and hail"
 msgstr "Mưa và mưa đá"
 
-#: applet.js:1019
+#: applet.js:1022
 msgid "Hot"
 msgstr "Nóng"
 
-#: applet.js:1021
+#: applet.js:1024
 msgid "Isolated thunderstorms"
 msgstr "Giông diện hẹp"
 
-#: applet.js:1024
+#: applet.js:1027
 msgid "Scattered thunderstorms"
 msgstr "Giông rải rác"
 
-#: applet.js:1026
+#: applet.js:1029
 msgid "Scattered showers"
 msgstr "Mưa rào rải rác"
 
-#: applet.js:1028 applet.js:1032
+#: applet.js:1031 applet.js:1035
 msgid "Heavy snow"
 msgstr "Tuyết mạnh"
 
-#: applet.js:1030
+#: applet.js:1033
 msgid "Scattered snow showers"
 msgstr "Mưa tuyết rải rác"
 
-#: applet.js:1036
+#: applet.js:1039
 msgid "Thundershowers"
 msgstr "Mưa rào có sấm"
 
-#: applet.js:1038
+#: applet.js:1041
 msgid "Snow showers"
 msgstr "Mưa tuyết rào"
 
-#: applet.js:1040
+#: applet.js:1043
 msgid "Isolated thundershowers"
 msgstr "Mưa rào rải rác"
 
-#: applet.js:1043
+#: applet.js:1046
 msgid "Not available"
 msgstr "Không có dữ liệu"
 
-#: applet.js:1048
+#: applet.js:1051
 msgid "Monday"
 msgstr "Thứ hai"
 
-#: applet.js:1048
+#: applet.js:1051
 msgid "Tuesday"
 msgstr "Thứ ba"
 
-#: applet.js:1048
+#: applet.js:1051
 msgid "Wednesday"
 msgstr "Thứ tư"
 
-#: applet.js:1048
+#: applet.js:1051
 msgid "Thursday"
 msgstr "Thứ năm"
 
-#: applet.js:1048
+#: applet.js:1051
 msgid "Friday"
 msgstr "Thứ sáu"
 
-#: applet.js:1048
+#: applet.js:1051
 msgid "Saturday"
 msgstr "Thứ bảy"
 
-#: applet.js:1048
+#: applet.js:1051
 msgid "Sunday"
 msgstr "Chủ Nhật"
 
-#: applet.js:1053
+#: applet.js:1056
 msgid "N"
 msgstr "B"
 
-#: applet.js:1053
+#: applet.js:1056
 msgid "NE"
 msgstr "ĐB"
 
-#: applet.js:1053
+#: applet.js:1056
 msgid "E"
 msgstr "Đ"
 
-#: applet.js:1053
+#: applet.js:1056
 msgid "SE"
 msgstr "ĐN"
 
-#: applet.js:1053
+#: applet.js:1056
 msgid "S"
 msgstr "N"
 
-#: applet.js:1053
+#: applet.js:1056
 msgid "SW"
 msgstr "TN"
 
-#: applet.js:1053
+#: applet.js:1056
 msgid "W"
 msgstr "T"
 
-#: applet.js:1053
+#: applet.js:1056
 msgid "NW"
 msgstr "TB"
 
