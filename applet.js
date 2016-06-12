@@ -476,6 +476,9 @@ MyApplet.prototype = {
         }
         this._currentWeatherWindChill.text = wind_chill + ' ' + this.unitToUnicode()
 
+        // Yahoo API returns values which are off by a factor of inHg to mbar
+        pressure = pressure * WEATHER_CONV_INHG_IN_MBAR
+
         // Override pressure units with our preference
         // Need to consider what units the Yahoo API has returned it in
         switch (this._pressureUnit) {
