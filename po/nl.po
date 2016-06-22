@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-12 12:27-0400\n"
-"PO-Revision-Date: 2012-01-05 10:00+0200\n"
+"PO-Revision-Date: 2016-06-20 10:00+0200\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -71,7 +71,7 @@ msgstr "Wind:"
 
 #: applet.js:748
 msgid "Wind Chill:"
-msgstr "Gevoelstemp:"
+msgstr "Gevoelstemperatuur:"
 
 #: applet.js:953
 msgid "Tornado"
@@ -307,7 +307,7 @@ msgstr "WOEID verkrijgen"
 
 #. cinnamon-weather->settings-schema.json->verticalOrientation->description
 msgid "Vertical orientation"
-msgstr ""
+msgstr "Verticale oriëntatie"
 
 #. cinnamon-weather->settings-schema.json->showTextInPanel->description
 msgid "Display current temperature in panel"
@@ -347,11 +347,11 @@ msgstr "Tijd tonen in 24-uurs-opmaak"
 
 #. cinnamon-weather->settings-schema.json->forecastDays->description
 msgid "Forecast length"
-msgstr ""
+msgstr "Reikwijdte van voorspelling"
 
 #. cinnamon-weather->settings-schema.json->forecastDays->units
 msgid "days"
-msgstr ""
+msgstr "dagen"
 
 #. cinnamon-weather->settings-schema.json->showSunrise->description
 msgid "Show sunrise / sunset times"
