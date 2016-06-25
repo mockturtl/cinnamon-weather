@@ -15,6 +15,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [fix] atmospheric pressure values #157
 
+##### 1.13.2
+
+- [tr] Dutch, Chinese (thanks Pjotr123, giwhub)
 
 ## 1.12
 
