@@ -19,6 +19,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [tr] Dutch, Chinese (thanks Pjotr123, giwhub)
 
+##### 1.13.3
+
+- [fix] 24-hour time display on some systems #162
+
 ## 1.12
 
 - [feat] add kPa pressure unit (thanks hockeylagu)
