@@ -629,7 +629,7 @@ MyApplet.prototype = {
     if (hh == '12') // 12 PM -> ok
       return hh + ':' + mm
 
-    return (parseInt(hh) + 12).toString() + ':' + mm
+    return (parseInt(hh, 10) + 12).toString() + ':' + mm
   }
 
 , destroyCurrentWeather: function destroyCurrentWeather() {
