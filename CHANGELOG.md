@@ -23,6 +23,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [fix] 24-hour time display on some systems #162
 
+##### 1.13.4
+
+- [tr] French #166
+
 ## 1.12
 
 - [feat] add kPa pressure unit (thanks hockeylagu)
