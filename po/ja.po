@@ -178,7 +178,7 @@ msgstr "曇り"
 
 #: applet.js:1008
 msgid "Mostly cloudy"
-msgstr "ところにより曇り"
+msgstr "おおむね曇り"
 
 #: applet.js:1011 applet.js:1037
 msgid "Partly cloudy"
@@ -186,7 +186,7 @@ msgstr "ところにより曇り"
 
 #: applet.js:1013
 msgid "Clear"
-msgstr "晴れ"
+msgstr "快晴"
 
 #: applet.js:1015
 msgid "Sunny"
