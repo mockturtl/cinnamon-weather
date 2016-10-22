@@ -1,32 +1,34 @@
 # Czech translation for gnome-shell-extension-weather
-# Copyright (C) 2011
+# Copyright (C) 2016
 # This file is distributed under the same license as the gnome-shell-extension-weather package.
-# David Štancl <dstancl@dstancl.cz>, 2011.
+# FIRST AUTHOR <mhladik@seznam.cz>, 2016.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.0\n"
+"Project-Id-Version: 1.13.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-12 12:27-0400\n"
-"PO-Revision-Date: 2012-04-04 15:19-0400\n"
-"Last-Translator: David Štancl <dstancl@dstancl.cz>\n"
-"Language-Team: cs_CZ <czech@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2016-10-21 09:48+0200\n"
+"PO-Revision-Date: 2016-10-21 13:02+0200\n"
+"Language-Team: mhladik@seznam.cz\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Last-Translator: Marek <mhladik@seznam.cz>\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Language: cs_CZ\n"
 
 #: applet.js:249
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: applet.js:250
 msgid "Click to open"
-msgstr ""
+msgstr "Klikni pro zobrazení"
 
 #: applet.js:289
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 #: applet.js:555
 msgid "Sunrise"
@@ -38,19 +40,19 @@ msgstr "Západ"
 
 #: applet.js:648
 msgid "Loading current weather ..."
-msgstr "Načítá se aktuální počasí ..."
+msgstr "Zjišťuji aktuální počasí …"
 
 #: applet.js:649
 msgid "Loading future weather ..."
-msgstr "Načítá se předpověď ..."
+msgstr "Zjišťuji jaké bude počasí …"
 
 #: applet.js:671
 msgid "Loading ..."
-msgstr "Načítá se ..."
+msgstr "Nahrávám …"
 
 #: applet.js:677
 msgid "Refresh"
-msgstr ""
+msgstr "Znovunačtení"
 
 #: applet.js:740
 msgid "Temperature:"
@@ -70,7 +72,7 @@ msgstr "Vítr:"
 
 #: applet.js:748
 msgid "Wind Chill:"
-msgstr "Vítr:"
+msgstr "Pocitově:"
 
 #: applet.js:953
 msgid "Tornado"
@@ -86,7 +88,7 @@ msgstr "Hurikán"
 
 #: applet.js:959
 msgid "Severe thunderstorms"
-msgstr "Četné bouřky"
+msgstr "Silné bouřky"
 
 #: applet.js:961
 msgid "Thunderstorms"
@@ -94,7 +96,7 @@ msgstr "Bouřky"
 
 #: applet.js:963
 msgid "Mixed rain and snow"
-msgstr "Sníh s deštěm"
+msgstr "Déšť se sněhem"
 
 #: applet.js:965
 msgid "Mixed rain and sleet"
@@ -102,11 +104,11 @@ msgstr "Déšť a plískanice"
 
 #: applet.js:967
 msgid "Mixed snow and sleet"
-msgstr "Sníh a plískanice"
+msgstr "Sněžení a plískanice"
 
 #: applet.js:969
 msgid "Freezing drizzle"
-msgstr "Namrzající mrholení"
+msgstr "Mrznoucí mrholení"
 
 #: applet.js:971
 msgid "Drizzle"
@@ -114,7 +116,7 @@ msgstr "Mrholení"
 
 #: applet.js:973
 msgid "Freezing rain"
-msgstr "Namrzající déšť"
+msgstr "Mrznoucí déšť"
 
 #: applet.js:975 applet.js:977
 msgid "Showers"
@@ -122,19 +124,19 @@ msgstr "Přeháňky"
 
 #: applet.js:979
 msgid "Snow flurries"
-msgstr "Sněhové přívaly"
+msgstr "Sněhové závany"
 
 #: applet.js:981
 msgid "Light snow showers"
-msgstr "Mírné sněžení"
+msgstr "Lehké sněhové přeháňky"
 
 #: applet.js:983
 msgid "Blowing snow"
-msgstr "Husté sněžení"
+msgstr "Nafoukaný sníh"
 
 #: applet.js:985
 msgid "Snow"
-msgstr "Sněžení"
+msgstr "Sníh"
 
 #: applet.js:987
 msgid "Hail"
@@ -146,7 +148,7 @@ msgstr "Plískanice"
 
 #: applet.js:991
 msgid "Dust"
-msgstr "Prašno"
+msgstr "Prach"
 
 #: applet.js:993
 msgid "Foggy"
@@ -162,7 +164,7 @@ msgstr "Kouřmo"
 
 #: applet.js:999
 msgid "Blustery"
-msgstr "Bouřlivě"
+msgstr "Bouřkové počasí"
 
 #: applet.js:1001
 msgid "Windy"
@@ -206,7 +208,7 @@ msgstr "Horko"
 
 #: applet.js:1024
 msgid "Isolated thunderstorms"
-msgstr "Osamocené bouřky"
+msgstr "Lokální bouřky"
 
 #: applet.js:1027
 msgid "Scattered thunderstorms"
@@ -214,19 +216,19 @@ msgstr "Občasné bouřky"
 
 #: applet.js:1029
 msgid "Scattered showers"
-msgstr "Občasné přeháňky"
+msgstr "Občasné přepršky"
 
 #: applet.js:1031 applet.js:1035
 msgid "Heavy snow"
-msgstr "Husté sněžení"
+msgstr "Silné sněžení"
 
 #: applet.js:1033
 msgid "Scattered snow showers"
-msgstr "Občasné sněžení"
+msgstr "Občasné sněhové přeháňky"
 
 #: applet.js:1039
 msgid "Thundershowers"
-msgstr "Bouřky s přeháňkami"
+msgstr "Přeháňky s bouřkou"
 
 #: applet.js:1041
 msgid "Snow showers"
@@ -234,11 +236,11 @@ msgstr "Sněhové přeháňky"
 
 #: applet.js:1043
 msgid "Isolated thundershowers"
-msgstr "Osamocené bouřky s deštěm"
+msgstr "Lokální přeháňky s bouřkou"
 
 #: applet.js:1046
 msgid "Not available"
-msgstr "Není k dispozici"
+msgstr "Není dostupné"
 
 #: applet.js:1051
 msgid "Monday"
@@ -290,7 +292,7 @@ msgstr "J"
 
 #: applet.js:1056
 msgid "SW"
-msgstr "JZ"
+msgstr "JW"
 
 #: applet.js:1056
 msgid "W"
@@ -302,149 +304,136 @@ msgstr "SZ"
 
 #. cinnamon-weather->settings-schema.json->woeidLookup->description
 msgid "Get WOEID"
-msgstr ""
+msgstr "Získat WOEID kód"
 
 #. cinnamon-weather->settings-schema.json->verticalOrientation->description
 msgid "Vertical orientation"
-msgstr ""
+msgstr "Zobrazení na výšku"
 
 #. cinnamon-weather->settings-schema.json->showTextInPanel->description
 msgid "Display current temperature in panel"
-msgstr ""
+msgstr "Zobrazit aktuální teplotu na panelu"
 
 #. cinnamon-weather->settings-schema.json->woeid->description
 msgid "WOEID"
-msgstr ""
+msgstr "Kód WOEID"
 
 #. cinnamon-weather->settings-schema.json->woeid->tooltip
 msgid "Where On Earth ID"
-msgstr ""
+msgstr "Kód místa na zemi"
 
 #. cinnamon-weather->settings-schema.json->temperatureUnit->description
-#, fuzzy
 msgid "Temperature unit"
-msgstr "Teplota:"
+msgstr "Jednotka teploty"
 
 #. cinnamon-weather->settings-schema.json->temperatureUnit->options
 msgid "fahrenheit"
-msgstr ""
+msgstr "Fahrenheit"
 
 #. cinnamon-weather->settings-schema.json->temperatureUnit->options
 msgid "celsius"
-msgstr ""
+msgstr "º Celsia"
 
 #. cinnamon-weather->settings-schema.json->translateCondition->description
 msgid "Translate condition"
-msgstr ""
+msgstr "Překlad počasí"
 
 #. cinnamon-weather->settings-schema.json->locationLabelOverride->description
 msgid "Override location label"
-msgstr ""
+msgstr "Přepsat název polohy"
 
 #. cinnamon-weather->settings-schema.json->show24Hours->description
 msgid "Display time in 24 hour format"
-msgstr ""
+msgstr "Zobrazovat 24hodinový formát"
 
 #. cinnamon-weather->settings-schema.json->forecastDays->description
 msgid "Forecast length"
-msgstr ""
+msgstr "Délka předpovědi"
 
 #. cinnamon-weather->settings-schema.json->forecastDays->units
 msgid "days"
-msgstr ""
+msgstr "dny"
 
 #. cinnamon-weather->settings-schema.json->showSunrise->description
 msgid "Show sunrise / sunset times"
-msgstr ""
+msgstr "Zobrazit východ a západ slunce"
 
 #. cinnamon-weather->settings-schema.json->windSpeedUnit->description
 msgid "Wind speed unit"
-msgstr ""
+msgstr "Jednotka rychlosti větru"
 
 #. cinnamon-weather->settings-schema.json->windSpeedUnit->options
 msgid "kph"
-msgstr ""
+msgstr "km/h"
 
 #. cinnamon-weather->settings-schema.json->windSpeedUnit->options
 msgid "m/s"
-msgstr ""
+msgstr "m/s"
 
 #. cinnamon-weather->settings-schema.json->windSpeedUnit->options
 msgid "knots"
-msgstr ""
+msgstr "uzly"
 
 #. cinnamon-weather->settings-schema.json->windSpeedUnit->options
 msgid "mph"
-msgstr ""
+msgstr "míle/h"
 
 #. cinnamon-weather->settings-schema.json->showCommentInPanel->description
 msgid "Show the weather condition (e.g., \"Windy\", \"Clear\") in the panel"
-msgstr ""
+msgstr "Zobrazit slovně stav počasí na panelu (např. \"Oblačno\", \"Jasno\")"
 
 #. cinnamon-weather->settings-schema.json->pressureUnit->description
 msgid "Atmospheric pressure unit"
-msgstr ""
+msgstr "Jednotka atm. tlaku"
 
 #. cinnamon-weather->settings-schema.json->pressureUnit->options
 msgid "psi"
-msgstr ""
+msgstr "psi"
 
 #. cinnamon-weather->settings-schema.json->pressureUnit->options
 msgid "atm"
-msgstr ""
+msgstr "atm"
 
 #. cinnamon-weather->settings-schema.json->pressureUnit->options
 msgid "kPa"
-msgstr ""
+msgstr "kPa"
 
 #. cinnamon-weather->settings-schema.json->pressureUnit->options
 msgid "Pa"
-msgstr ""
+msgstr "Pa"
 
 #. cinnamon-weather->settings-schema.json->pressureUnit->options
 msgid "mm Hg"
-msgstr ""
+msgstr "mm Hg"
 
 #. cinnamon-weather->settings-schema.json->pressureUnit->options
 msgid "at"
-msgstr ""
+msgstr "at"
 
 #. cinnamon-weather->settings-schema.json->pressureUnit->options
 msgid "mbar"
-msgstr ""
+msgstr "hPa"
 
 #. cinnamon-weather->settings-schema.json->pressureUnit->options
 msgid "in Hg"
-msgstr ""
+msgstr "palce Hg"
 
 #. cinnamon-weather->settings-schema.json->refreshInterval->description
 msgid "Update interval"
-msgstr ""
+msgstr "Interval aktualizace"
 
 #. cinnamon-weather->settings-schema.json->refreshInterval->units
 msgid "minutes"
-msgstr ""
+msgstr "minut"
 
 #. cinnamon-weather->settings-schema.json->useSymbolicIcons->description
 msgid "Symbolic icons"
-msgstr ""
+msgstr "Zjednodušené symbolické ikony"
 
 #. cinnamon-weather->metadata.json->description
 msgid "View your local weather forecast"
-msgstr ""
+msgstr "Zobrazit lokální předpověď počasí"
 
 #. cinnamon-weather->metadata.json->name
 msgid "Weather"
-msgstr ""
-
-#~ msgid "Please wait"
-#~ msgstr "Čekejte"
-
-#~ msgid "Today"
-#~ msgstr "Dnes"
-
-#~ msgid "Tomorrow"
-#~ msgstr "Zítra"
-
-#~ msgid "Schema \"%s\" not found."
-#~ msgstr "Schéma \"%s\" nebylo nalezeno."
+msgstr "Počasí"
