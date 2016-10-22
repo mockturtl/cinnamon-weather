@@ -31,6 +31,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [tr] Japanese #167
 
+##### 1.13.6
+
+- [tr] Czech (thanks Marek Hladík)
+
 ## 1.12
 
 - [feat] add kPa pressure unit (thanks hockeylagu)
