@@ -79,6 +79,8 @@ const WEATHER_PRESSURE_UNIT_KEY = 'pressureUnit'
 const WEATHER_USE_SYMBOLIC_ICONS_KEY = 'useSymbolicIcons'
 const WEATHER_WIND_SPEED_UNIT_KEY = 'windSpeedUnit'
 const WEATHER_WOEID_KEY = 'woeid'
+const WEATHER_USE_PROXY = 'useManualProxy'
+const WEATHER_PROXY_URI = 'proxyUri'
 
 const KEYS = [
   WEATHER_TEMPERATURE_UNIT_KEY,
@@ -177,7 +179,6 @@ const WEATHER_CONV_ATM_IN_INHG = 33.421054e-3
 
 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64)
 const _httpSession = new Soup.SessionAsync()
-Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault())
 
 
 //----------------------------------------------------------------------
@@ -217,6 +218,11 @@ function _(str) {
 
 function MyApplet(metadata, orientation, panelHeight, instanceId) {
   this.settings = new Settings.AppletSettings(this, UUID, instanceId)
+  if (this._useManualProxy) {
+    _httpSession.proxy_uri = new Soup.URI(this._proxyUri)
+  } else {
+    Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault())
+  }
   this._init(orientation, panelHeight, instanceId)
 }
 
