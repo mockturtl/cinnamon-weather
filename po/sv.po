@@ -2,7 +2,7 @@
 # Copyright (C) 2011
 # This file is distributed under the same license as the gnome-shell-extension-weather package.
 # Mauricio Barraza <mauricio@barraza.se>, 2011.
-#
+# Minor updates by jorgenqv https://github.com/jorgenqv - 2014, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
@@ -50,7 +50,7 @@ msgstr "Laddar..."
 
 #: applet.js:677
 msgid "Refresh"
-msgstr ""
+msgstr "Uppdatera"
 
 #: applet.js:740
 msgid "Temperature:"
@@ -306,7 +306,7 @@ msgstr "Hämta WOEID"
 
 #. cinnamon-weather->settings-schema.json->verticalOrientation->description
 msgid "Vertical orientation"
-msgstr ""
+msgstr "Vertikal anpassning"
 
 #. cinnamon-weather->settings-schema.json->showTextInPanel->description
 msgid "Display current temperature in panel"
@@ -346,11 +346,11 @@ msgstr "Visa tid i 24-timmarsformat"
 
 #. cinnamon-weather->settings-schema.json->forecastDays->description
 msgid "Forecast length"
-msgstr ""
+msgstr "Prognoslängd"
 
 #. cinnamon-weather->settings-schema.json->forecastDays->units
 msgid "days"
-msgstr ""
+msgstr "dagar"
 
 #. cinnamon-weather->settings-schema.json->showSunrise->description
 msgid "Show sunrise / sunset times"
@@ -430,11 +430,11 @@ msgstr "Symboliska ikoner"
 
 #. cinnamon-weather->metadata.json->description
 msgid "View your local weather forecast"
-msgstr ""
+msgstr "Visa din lokala prognos"
 
 #. cinnamon-weather->metadata.json->name
 msgid "Weather"
-msgstr ""
+msgstr "Väder"
 
 #~ msgid "Show 5-day forecast"
 #~ msgstr "Visa 5-dygnsprognos"
