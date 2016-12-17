@@ -35,6 +35,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [tr] Czech (thanks Marek Hladík)
 
+##### 1.13.7
+
+- [tr] Swedish (thanks jorgenqv)
+
 ## 1.12
 
 - [feat] add kPa pressure unit (thanks hockeylagu)
