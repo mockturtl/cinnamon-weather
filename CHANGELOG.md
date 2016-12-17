@@ -37,7 +37,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ##### 1.13.7
 
-- [tr] Swedish (thanks jorgenqv)
+- [tr] Swedish #173
 
 ## 1.12
 
