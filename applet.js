@@ -252,7 +252,7 @@ MyApplet.prototype = {
       // PopupMenu
       this.menuManager = new PopupMenu.PopupMenuManager(this)
       this.menu = new Applet.AppletPopupMenu(this, orientation)
-      this.menu.actor.add_style_class_name(STYLE_WEATHER_MENU)
+      this.menu.setCustomStyleClass(STYLE_WEATHER_MENU)
       this.menuManager.addMenu(this.menu)
 
       //----------------------------------
