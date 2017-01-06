@@ -79,7 +79,7 @@ const WEATHER_PRESSURE_UNIT_KEY = 'pressureUnit'
 const WEATHER_USE_SYMBOLIC_ICONS_KEY = 'useSymbolicIcons'
 const WEATHER_WIND_SPEED_UNIT_KEY = 'windSpeedUnit'
 const WEATHER_WOEID_KEY = 'woeid'
-const WEATHER_USE_PROXY = 'useManualProxy'
+const WEATHER_USE_PROXY = 'useProxy'
 const WEATHER_PROXY_URI = 'proxyUri'
 
 const KEYS = [
@@ -95,7 +95,9 @@ const KEYS = [
   WEATHER_SHOW_24HOURS_KEY,
   WEATHER_FORECAST_DAYS,
   WEATHER_REFRESH_INTERVAL,
-  WEATHER_PRESSURE_UNIT_KEY
+  WEATHER_PRESSURE_UNIT_KEY,
+  WEATHER_USE_PROXY,
+  WEATHER_PROXY_URI
 ]
 
 // Signals
@@ -218,11 +220,6 @@ function _(str) {
 
 function MyApplet(metadata, orientation, panelHeight, instanceId) {
   this.settings = new Settings.AppletSettings(this, UUID, instanceId)
-  if (this._useManualProxy) {
-    _httpSession.proxy_uri = new Soup.URI(this._proxyUri)
-  } else {
-    Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault())
-  }
   this._init(orientation, panelHeight, instanceId)
 }
 
@@ -391,6 +388,14 @@ MyApplet.prototype = {
 , refreshWeather: function refreshWeather(recurse) {
     //log("recurse=" + recurse)
     //this.dumpKeys()
+    if (this._useProxy != undefined) {
+      //log("Use manual proxy: " + this._useProxy + ", uri: " + this._proxyUri)
+      if (this._useProxy) {
+        _httpSession.proxy_uri = new Soup.URI(this._proxyUri)
+      } else {
+        Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault())
+      }
+    }
     this.loadJsonAsync(this.weatherUrl(), function(json) {
       try {
         let weather = json.get_object_member('query').get_object_member('results').get_object_member('channel')

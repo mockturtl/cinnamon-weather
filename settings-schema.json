@@ -104,7 +104,7 @@
   , "step": 5
   , "description": "Update interval"
   }
-, "useManualProxy":
+, "useProxy":
   { "type": "checkbox"
   , "default": false
   , "description": "Use manual proxy"
