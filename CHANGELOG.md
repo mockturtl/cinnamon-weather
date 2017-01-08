@@ -39,6 +39,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - [tr] Swedish #173
 
+##### 1.13.8
+
+- [tr] German #179
+
 ## 1.12
 
 - [feat] add kPa pressure unit (thanks hockeylagu)
