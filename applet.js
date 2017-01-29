@@ -11,6 +11,7 @@
 const Cairo = imports.cairo
 const Lang = imports.lang
 // http://developer.gnome.org/glib/unstable/glib-The-Main-Event-Loop.html
+const Main = imports.ui.main
 const Mainloop = imports.mainloop
 
 /**
@@ -265,6 +266,15 @@ MyApplet.prototype = {
         this.settings.bindProperty(Settings.BindingDirection.IN, key, keyProp,
                                    this.refreshAndRebuild, null)
       }
+      this.settings.bindProperty(Settings.BindingDirection.IN,
+                                 "keybinding",
+                                 "keybinding",
+                                 this._onKeySettingsUpdated,
+                                 null)
+      Main.keybindingManager.addHotKey(UUID,
+                                       this.keybinding,
+                                       Lang.bind(this,
+                                                 this.on_applet_clicked))
       //log("bound settings")
 
       this.updateIconType()
@@ -326,7 +336,17 @@ MyApplet.prototype = {
    }
 
   // Override Methods: Applet
-, on_applet_clicked: function on_applet_clicked(event) {
+, _onKeySettingsUpdated: function _onKeySettingsUpdated() {
+    if (this.keybinding != null)
+      Main.keybindingManager.addHotKey(UUID,
+                                       this.keybinding,
+                                       Lang.bind(this,
+                                                 this.on_applet_clicked))
+
+    this.on_applet_clicked
+  }
+
+, on_applet_clicked: function on_applet_clicked() {
     this.menu.toggle()
   }
 
