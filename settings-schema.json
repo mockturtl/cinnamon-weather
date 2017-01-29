@@ -104,5 +104,15 @@
   , "step": 5
   , "description": "Update interval"
   }
+, "useProxy":
+  { "type": "checkbox"
+  , "default": false
+  , "description": "Use manual proxy"
+  }
+, "proxyUri":
+  { "type": "entry"
+  , "default": "http://127.0.0.1:8080"
+  , "description": "Proxy URI(Only HTTP/HTTPS proxy)"
+  }
 }
 

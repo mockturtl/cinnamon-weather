@@ -440,6 +440,14 @@ msgstr "查看您当地的天气预报"
 msgid "Weather"
 msgstr "天气"
 
+#. cinnamon-weather->settings-schema.json->useManualProxy->description
+msgid "Use manual proxy"
+msgstr "使用自定义代理"
+
+#. cinnamon-weather->settings-schema.json->proxyUri->description
+msgid "Proxy URI(Only HTTP/HTTPS proxy)"
+msgstr "代理地址(只支持HTTP和HTTPS代理)"
+
 #~ msgid "Show 5-day forecast"
 #~ msgstr "显示未来五天的天气"
 

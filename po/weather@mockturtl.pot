@@ -436,3 +436,11 @@ msgstr ""
 #. cinnamon-weather->metadata.json->name
 msgid "Weather"
 msgstr ""
+
+#. cinnamon-weather->settings-schema.json->useManualProxy->description
+msgid "Use manual proxy"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->proxyUri->description
+msgid "Proxy URI(Only HTTP/HTTPS proxy)"
+msgstr ""
