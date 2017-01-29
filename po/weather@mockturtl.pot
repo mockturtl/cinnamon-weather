@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-12 12:27-0400\n"
+"POT-Creation-Date: 2016-08-27 10:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -301,8 +301,20 @@ msgstr ""
 msgid "NW"
 msgstr ""
 
+#. cinnamon-weather->metadata.json->description
+msgid "View your local weather forecast"
+msgstr ""
+
+#. cinnamon-weather->metadata.json->name
+msgid "Weather"
+msgstr ""
+
 #. cinnamon-weather->settings-schema.json->woeidLookup->description
 msgid "Get WOEID"
+msgstr ""
+
+#. cinnamon-weather->settings-schema.json->woeidLookup->tooltip
+msgid "http://woeid.rosselliot.co.nz/"
 msgstr ""
 
 #. cinnamon-weather->settings-schema.json->verticalOrientation->description
@@ -427,12 +439,4 @@ msgstr ""
 
 #. cinnamon-weather->settings-schema.json->useSymbolicIcons->description
 msgid "Symbolic icons"
-msgstr ""
-
-#. cinnamon-weather->metadata.json->description
-msgid "View your local weather forecast"
-msgstr ""
-
-#. cinnamon-weather->metadata.json->name
-msgid "Weather"
 msgstr ""
